@@ -17,6 +17,7 @@ const Hero = () => {
                 <div className="flex gap-10 items-center text-white max-md:hidden">
                     <Link href={'/about'}>About us</Link>
                     <Link href={'/service'}>Services</Link>
+                    <Link href={'/gallery'}>Gallery</Link>
                     <Link href={'/contact'}>Contacts</Link>
                 </div>
                 <div className='md:hidden'>
@@ -50,7 +51,7 @@ const Hero = () => {
                     agatho
                     `}>Johanna Beauty</h2>
                     <p className="mb-9 text-sm  md:text-2xl font-light text-white">The space of your beauty</p>
-                    <Link href={'https://wa.me/918010512106'} target='_blank' className="btn  bg-transparent hover:bg-myColor hover:border-white text-white border-white btn-circle max-md:text-sm border-2 h-28 w-28">Contact Us</Link>
+                    <Link href={'https://wa.me/918010512106'} target='_blank' className="btn  bg-transparent hover:bg-transparent hover:border-white text-white border-white btn-circle max-md:text-sm border-2 h-28 w-28">Contact Us</Link>
                 </div>
             </div>
         </div>

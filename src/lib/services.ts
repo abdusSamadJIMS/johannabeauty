@@ -416,7 +416,7 @@ export const services = [
         description: "Our Experts finely beautify your nails",
         subServices: [
             {
-                name: "Manicure/pedicure",
+                name: "Manicure & pedicure",
                 services: [
                     {
                         name: 'basic manicure',

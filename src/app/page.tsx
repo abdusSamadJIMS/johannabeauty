@@ -6,6 +6,11 @@ import facial from '../../public/static/services/facialTreatment.jpg'
 import HomeServices from "@/components/HomeServices";
 import { services } from "@/lib/services";
 import HomeServicePrice from "@/components/HomeServicePrice";
+import Footer from "@/components/Footer";
+import HomeOffers from "@/components/HomeOffers";
+import { BiEnvelope, BiUser } from "react-icons/bi";
+import { IoIosSend } from "react-icons/io";
+import HomeContact from "@/components/HomeContact";
 
 export default function Home() {
   return (
@@ -14,21 +19,9 @@ export default function Home() {
       <HomeAbout />
       <HomeServices />
       <HomeServicePrice />
-      <div className=" px-10">
-        <div className="flex items-center justify-between border-t-2 border-t-myColor text-myColor py-10">
-          <div>
-            <p>Johanna Beauty All rights reserved</p>
-          </div>
-          <div className="linkss flex gap-5">
-            <Link href={'/about'}>About us</Link>
-            <Link href={'/services'}>Services</Link>
-            <Link href={'/contact'}>Contact</Link>
-          </div>
-          <div className="">
-            <p>+91 8010 51 2106</p>
-          </div>
-        </div>
-      </div>
+      <HomeOffers />
+      <HomeContact />
+      <Footer />
     </main>
   );
 }
