@@ -9,6 +9,7 @@ const Footer = () => {
                     <p className="max-md:text-sm font-bold">Johanna Beauty All rights reserved</p>
                 </div>
                 <div className="linkss flex gap-5 max-md:text-sm">
+                    <Link href={'/'} className='underline underline-offset-4'>Home</Link>
                     <Link href={'/about'}>About us</Link>
                     <Link href={'/services'}>Services</Link>
                     <Link href={'/gallery'}>Gallery</Link>

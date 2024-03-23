@@ -21,7 +21,7 @@ export default function Home() {
       <HomeServicePrice />
       <HomeOffers />
       <HomeContact />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }

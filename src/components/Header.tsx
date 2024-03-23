@@ -1,0 +1,57 @@
+'use client'
+
+import { links } from '@/lib/links'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
+import { RxHamburgerMenu } from 'react-icons/rx'
+
+const Header = () => {
+    const pathname = usePathname()
+    return (
+        <nav className="flex  justify-between w-full items-center p-5 absolute z-10 top-0">
+            <div className={'agatho'}>
+                <Link href={'/'} className="font-bold md:text-2xl tracking-wider text-white">Johanna Beauty</Link>
+            </div>
+            <div className="flex gap-10 items-center text-white max-md:hidden">
+                {
+                    links.map((link) =>
+                    (
+                        <Link key={link.href} href={link.href} className={`border  px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"}`}>{link.label}</Link>
+
+                    ))
+                }
+
+            </div>
+            <div className='md:hidden'>
+
+
+                <div className="drawer drawer-end ">
+                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-content">
+                        {/* Page content here */}
+                        <label htmlFor="my-drawer-4" className="drawer-button ">
+                            <RxHamburgerMenu className='text-3xl text-white cursor-pointer' />
+                        </label>
+                    </div>
+                    <div className="drawer-side">
+                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+                        <div className="menu p-4 min-h-full flex items-center justify-center  text-base-content max-w-[50%] bg-myColor">
+                            {/* Sidebar content here */}
+                            <div className='flex flex-col gap-6 text-2xl text-white font-thin'>
+                                {
+                                    links.map((link) => (
+                                        <Link key={link.href} href={link.href} className={`capitalize ${(link.href == pathname) ? "underline font-medium" : "font-thin"}`}>{link.label}</Link>
+
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    )
+}
+
+export default Header
