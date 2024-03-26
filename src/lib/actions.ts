@@ -36,12 +36,18 @@ export async function signUp(formData: FormData) {
 
 }
 
+export async function revalidate() {
+    try {
+        revalidatePath('/')
+    } catch (error) {
+        return { message: "Field is missing !", ok: false }
+    }
+}
 export async function fetchAllCategories() {
     try {
         const categories = await prisma.category.findMany();
         return categories
     } catch (error) {
-
     }
 }
 

@@ -1,5 +1,5 @@
 'use client'
-import { addCatogory } from '@/lib/actions'
+import { addCatogory, revalidate } from '@/lib/actions'
 import { useEdgeStore } from '@/lib/edgestore'
 import { useRouter } from 'next/navigation'
 import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
@@ -34,7 +34,7 @@ const CategoryAddForm = () => {
             })
             const data = await res.json();
             console.log(data);
-
+            await revalidate();
             setIsLoading(false)
             setFile(undefined)
             setCategoryObject({
@@ -42,9 +42,6 @@ const CategoryAddForm = () => {
                 description: ""
             })
             ref.current?.reset();
-            router.refresh();
-            // window.location.reload();
-
         }
     }
     useEffect(() => {
