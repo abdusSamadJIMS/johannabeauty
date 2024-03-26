@@ -4,6 +4,8 @@ import * as bcrypt from 'bcrypt'
 import prisma from './prisma'
 import { revalidatePath } from 'next/cache'
 
+
+
 export async function signUp(formData: FormData) {
     const username = formData.get('username') as string
     const password = formData.get('password') as string
@@ -32,6 +34,15 @@ export async function signUp(formData: FormData) {
 
     }
 
+}
+
+export async function fetchAllCategories() {
+    try {
+        const categories = await prisma.category.findMany();
+        return categories
+    } catch (error) {
+
+    }
 }
 
 export async function testService(url: string) {

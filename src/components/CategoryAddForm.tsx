@@ -33,6 +33,8 @@ const CategoryAddForm = () => {
                 body: JSON.stringify({ ...categoryObject, image: fileRes.url })
             })
             const data = await res.json();
+            console.log(data);
+
             setIsLoading(false)
             setFile(undefined)
             setCategoryObject({
@@ -41,6 +43,7 @@ const CategoryAddForm = () => {
             })
             ref.current?.reset();
             router.refresh();
+            // window.location.reload();
 
         }
     }

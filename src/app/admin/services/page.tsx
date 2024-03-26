@@ -1,9 +1,11 @@
 import CategoryAddForm from '@/components/CategoryAddForm';
 import CategoryTable from '@/components/CategoryTable';
+import { fetchAllCategories } from '@/lib/actions';
 import prisma from '@/lib/prisma'
 
 const AdminServicesPage = async () => {
-    const data = await prisma.category.findMany({});
+    const data = await fetchAllCategories();
+
     return (
         <div className='mt-10'>
             <header className={`border-b-4 border-b-myColor mb-20 
@@ -14,7 +16,9 @@ const AdminServicesPage = async () => {
 
                 <CategoryAddForm />
             </div>
-            <CategoryTable data={data} />
+            {
+                data && <CategoryTable data={data} />
+            }
         </div>
     )
 }

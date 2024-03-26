@@ -20,8 +20,8 @@ const CategoryTable = ({ data }: { data: Category[] }) => {
                         data.map((d, index) => (
                             <tr key={index}>
                                 <td>{index + 1}</td>
-                                <td>{d.title}</td>
-                                <td><Link href={'/admin/services/' + d.id}>Details</Link>  </td>
+                                <td className='capitalize'>{d.title}</td>
+                                <td><Link href={'/admin/services/' + d.id} className='link link-hover'>Details</Link>  </td>
                                 <td className='flex justify-end'>
                                     <form action={deleteCategory}>
                                         <input type="hidden" name="id" value={d.id} />
