@@ -25,6 +25,7 @@ const CategoryTable = ({ data }: { data: Category[] }) => {
                                 <td className='flex justify-end'>
                                     <form action={deleteCategory}>
                                         <input type="hidden" name="id" value={d.id} />
+                                        <input type="hidden" name="image" value={d.image} />
                                         <button type="submit" className='btn btn-error'>Delete</button>
                                     </form>
                                 </td>

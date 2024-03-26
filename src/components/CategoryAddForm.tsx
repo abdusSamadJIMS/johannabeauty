@@ -22,7 +22,7 @@ const CategoryAddForm = () => {
                 file,
                 onProgressChange: (progress) => {
                     // you can use this to show a progress bar
-                    console.log(progress);
+                    // console.log(progress);
                 },
             })
             const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/createCategory`, {
@@ -36,7 +36,7 @@ const CategoryAddForm = () => {
 
             )
             const data = await res.json();
-            console.log(data);
+            // console.log(data);
             await revalidate();
             setIsLoading(false)
             setFile(undefined)
@@ -48,10 +48,11 @@ const CategoryAddForm = () => {
             // router.refresh();
         }
     }
+
     useEffect(() => {
-        console.log(categoryObject);
-        router.refresh();
-    }, [categoryObject, router]);
+        // console.log(categoryObject);
+        // router.refresh();
+    }, [categoryObject]);
     return (
         <form ref={ref} onSubmit={onSubmitHandler} className='flex flex-col max-w-md mx-auto '>
             {

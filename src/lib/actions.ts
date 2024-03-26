@@ -3,6 +3,7 @@
 import * as bcrypt from 'bcrypt'
 import prisma from './prisma'
 import { revalidatePath } from 'next/cache'
+import { backendClient } from './edgestore-server'
 
 
 
@@ -44,6 +45,14 @@ export async function revalidate() {
         return { message: "Field is missing !", ok: false }
     }
 }
+export async function revalidate2() {
+    try {
+        revalidatePath('/service/[id]')
+        return true
+    } catch (error) {
+        return { message: "Field is missing !", ok: false }
+    }
+}
 
 export async function fetchAllCategories() {
     try {
@@ -51,7 +60,24 @@ export async function fetchAllCategories() {
         revalidatePath('/');
         return categories
     } catch (error) {
-        console.log(error);
+        // console.log(error);
+    }
+}
+
+export async function fetchUniqueCategory(id: string) {
+    try {
+        const Category = await prisma.category.findUnique({
+            where: {
+                id
+            },
+            include: {
+                Service: true
+            }
+        })
+        revalidatePath('/');
+        return Category;
+    } catch (error) {
+
     }
 }
 
@@ -144,7 +170,7 @@ export async function addSubService(formData: FormData) {
         revalidatePath('/')
         return { message: "Creation Successful!", ok: true }
     } catch (error) {
-        console.log(error);
+        // console.log(error);
 
         return { message: "Server Error!", ok: false }
     }
@@ -153,11 +179,18 @@ export async function addSubService(formData: FormData) {
 
 export async function deleteCategory(formData: FormData) {
     const id = formData.get("id") as string
+    const image = formData.get("image") as string
     if (!id) {
         return { message: "Something went wrong!", ok: false }
     }
 
+
+
     try {
+
+        const res = await backendClient.publicFiles.deleteFile({
+            url: image
+        })
         const deletedServices = await prisma.service.deleteMany({
             where: {
                 categoryId: id

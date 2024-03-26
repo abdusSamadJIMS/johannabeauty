@@ -1,21 +1,16 @@
-import { addService, addSubService, deleteService, deleteSubService } from '@/lib/actions';
+import { addService, addSubService, deleteService, deleteSubService, fetchUniqueCategory } from '@/lib/actions';
 import prisma from '@/lib/prisma'
+import Image from 'next/image';
 import { redirect } from 'next/navigation'
 import React from 'react'
+import CategoryUpdateForm from './CategoryUpdateForm';
 
 const CategoryDetail = async ({ params }: { params: { id: string } }) => {
 
     const byteSize = (str: string) => new Blob([str]).size;
     if (!(byteSize(params.id) == 24)) redirect("/admin/services")
 
-    const Category = await prisma.category.findUnique({
-        where: {
-            id: params.id
-        },
-        include: {
-            Service: true
-        }
-    })
+    const Category = await fetchUniqueCategory(params.id);
 
     let subService;
 
@@ -36,12 +31,7 @@ const CategoryDetail = async ({ params }: { params: { id: string } }) => {
                         Update Category
                     </div>
                     <div className="collapse-content">
-                        <form action="" className='flex flex-col'>
-                            <input type="text" name="title" id="title" defaultValue={Category.title} placeholder='Title' className='input border-black mb-3 text-white' />
-                            <input type="text" name="image" id="image" defaultValue={Category.image} placeholder='Image' className='input border-black mb-3 text-white' />
-                            <textarea name="description" id="description" defaultValue={Category.description} placeholder='Title' className='textarea border-black mb-3 text-white' />
-                            <button type="submit" className='btn'>Update</button>
-                        </form>
+                        <CategoryUpdateForm Category={Category} />
                     </div>
                 </div>
                 <div className="collapse bg-myColor2 collapse-arrow mb-3">

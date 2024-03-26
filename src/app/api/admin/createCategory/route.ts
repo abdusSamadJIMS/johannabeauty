@@ -25,3 +25,39 @@ export async function POST(req: NextRequest) {
 
     }
 }
+
+export async function PUT(req: NextRequest) {
+    const body = await req.json();
+    // console.log(body.changedFields);
+
+    const changedFields: { title: boolean, image: boolean, description: boolean } = body.changedFields;
+
+    try {
+        if (changedFields.image) {
+            const { title, image, description, id } = body;
+            const updatedCategory = await prisma.category.update({
+                where: { id },
+                data: { title, image, description }
+            })
+            // console.log('success');
+
+            return NextResponse.json({ message: "Category updated successfully ! ", ok: true }, { status: 200 })
+        } else {
+            const { title, description, id } = body;
+            const updatedCategory = await prisma.category.update({
+                where: { id },
+                data: { title, description }
+            })
+            // console.log('success');
+
+            return NextResponse.json({ updatedCategory, message: "Category updated successfully ! ", ok: true }, { status: 200 })
+        }
+    } catch (error) {
+        // console.log(error);
+
+        return NextResponse.json({ message: "Unexpected Error occurred ! ", ok: false }, { status: 500 })
+
+    }
+
+
+}
