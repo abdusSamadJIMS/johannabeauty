@@ -45,13 +45,13 @@ const CategoryAddForm = () => {
                 description: ""
             })
             ref.current?.reset();
-            // router.refresh();
-
+            router.refresh();
         }
     }
     useEffect(() => {
         console.log(categoryObject);
-    }, [categoryObject])
+        router.refresh();
+    }, [categoryObject, router]);
     return (
         <form ref={ref} onSubmit={onSubmitHandler} className='flex flex-col max-w-md mx-auto '>
             {

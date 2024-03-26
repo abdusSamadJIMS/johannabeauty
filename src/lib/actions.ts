@@ -47,6 +47,7 @@ export async function revalidate() {
 export async function fetchAllCategories() {
     try {
         const categories = await prisma.category.findMany();
+        revalidatePath('/');
         return categories
     } catch (error) {
     }
