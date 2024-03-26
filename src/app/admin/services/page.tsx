@@ -1,10 +1,9 @@
 import CategoryAddForm from '@/components/CategoryAddForm';
 import CategoryTable from '@/components/CategoryTable';
 import { fetchAllCategories } from '@/lib/actions';
-import prisma from '@/lib/prisma'
 
 const AdminServicesPage = async () => {
-    const data = await fetchAllCategories();
+    let data = await fetchAllCategories()
 
     return (
         <div className='mt-10'>

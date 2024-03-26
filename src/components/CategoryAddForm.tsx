@@ -26,12 +26,15 @@ const CategoryAddForm = () => {
                 },
             })
             const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/createCategory`, {
+                cache: "no-cache",
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
                 },
                 body: JSON.stringify({ ...categoryObject, image: fileRes.url })
-            })
+            },
+
+            )
             const data = await res.json();
             console.log(data);
             await revalidate();
@@ -42,6 +45,8 @@ const CategoryAddForm = () => {
                 description: ""
             })
             ref.current?.reset();
+            // router.refresh();
+
         }
     }
     useEffect(() => {

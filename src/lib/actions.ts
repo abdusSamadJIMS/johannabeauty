@@ -2,7 +2,7 @@
 
 import * as bcrypt from 'bcrypt'
 import prisma from './prisma'
-import { revalidatePath } from 'next/cache'
+import { revalidatePath, revalidateTag } from 'next/cache'
 
 
 
@@ -38,7 +38,8 @@ export async function signUp(formData: FormData) {
 
 export async function revalidate() {
     try {
-        revalidatePath('/')
+        revalidatePath('/service')
+        return true
     } catch (error) {
         return { message: "Field is missing !", ok: false }
     }
