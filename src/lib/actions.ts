@@ -2,7 +2,7 @@
 
 import * as bcrypt from 'bcrypt'
 import prisma from './prisma'
-import { revalidatePath, revalidateTag } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 
 
 
@@ -44,21 +44,17 @@ export async function revalidate() {
         return { message: "Field is missing !", ok: false }
     }
 }
+
 export async function fetchAllCategories() {
     try {
         const categories = await prisma.category.findMany();
         revalidatePath('/');
         return categories
     } catch (error) {
+        console.log(error);
     }
 }
 
-export async function testService(url: string) {
-    console.log('serverAction');
-    console.log(url);
-
-
-}
 export async function addCatogory(formData: FormData) {
     const title = formData.get('title') as string
     const image = formData.get('image') as string

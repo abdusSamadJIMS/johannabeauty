@@ -45,7 +45,7 @@ const CategoryAddForm = () => {
                 description: ""
             })
             ref.current?.reset();
-            router.refresh();
+            // router.refresh();
         }
     }
     useEffect(() => {
