@@ -59,9 +59,9 @@ const HomeServices = () => {
             </header>
             <div className="carousel carousel-center rounded gap-[2.2%] md:gap-[1.5%] w-full">
                 {
-                    services.map((service) =>
+                    services.map((service, index) =>
                     (
-                        <HomeServiceCarouselItem id={service.id} description={service.description} image={service.image} title={service.title} key={service.id} />
+                        <HomeServiceCarouselItem id={(index + 1).toString()} description={service.description} image={service.image} title={service.title} key={index} />
                     ))
                 }
             </div>

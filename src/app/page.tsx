@@ -18,10 +18,9 @@ export default function Home() {
       <Hero />
       <HomeAbout />
       <HomeServices />
-      <HomeServicePrice />
       <HomeOffers />
+      <HomeServicePrice />
       <HomeContact />
-      {/* <Footer /> */}
     </main>
   );
 }

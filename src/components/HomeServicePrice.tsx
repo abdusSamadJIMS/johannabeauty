@@ -18,9 +18,9 @@ const HomeServicePrice = () => {
             </header>
             <div className="flex items-center text-center gap-5 overflow-auto mb-16">
                 {
-                    services.map((service) =>
+                    services.map((service, index) =>
                     (
-                        <div key={service.id} className="flex gap-10 w-full">
+                        <div key={index} className="flex gap-10 w-full">
                             <p
                                 onClick={() => {
                                     setSelectedService(service.subServices)
@@ -29,7 +29,7 @@ const HomeServicePrice = () => {
                                 className={`cursor-pointer max-sm:text-sm ${activeService == service.title ? "" : "opacity-40"}`}
                             >{service.title}</p>
                             {
-                                (parseInt(service.id) != services.length) &&
+                                ((index + 1) != services.length) &&
                                 <i className='border-r rotate-12 border-r-myColor'></i>
                             }
                         </div>

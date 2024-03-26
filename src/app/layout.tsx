@@ -5,6 +5,7 @@ import "./globals.css";
 import { NextFont } from "next/dist/compiled/@next/font";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Providers from "@/components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 const agatho = localFont({
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${agatho.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

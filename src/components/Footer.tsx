@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import FooterLinks from './FooterLinks'
 
 const Footer = () => {
     return (
@@ -8,13 +9,7 @@ const Footer = () => {
                 <div>
                     <p className="max-md:text-sm font-bold">Johanna Beauty All rights reserved</p>
                 </div>
-                <div className="linkss flex gap-5 max-md:text-sm">
-                    <Link href={'/'} className='underline underline-offset-4'>Home</Link>
-                    <Link href={'/about'}>About us</Link>
-                    <Link href={'/services'}>Services</Link>
-                    <Link href={'/gallery'}>Gallery</Link>
-                    <Link href={'/contact'}>Contact</Link>
-                </div>
+                <FooterLinks />
                 <div className="">
                     <p>+91 8010 51 2106</p>
                 </div>

@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx'
-
 const Header = () => {
     const pathname = usePathname()
     return (
@@ -17,7 +16,7 @@ const Header = () => {
                 {
                     links.map((link) =>
                     (
-                        <Link key={link.href} href={link.href} className={`border  px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"}`}>{link.label}</Link>
+                        <Link key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize`}>{link.label}</Link>
 
                     ))
                 }

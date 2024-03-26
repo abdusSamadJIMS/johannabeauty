@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { BiEnvelope, BiPhone, BiUser } from 'react-icons/bi'
+import { BiEnvelope, BiPhone, } from 'react-icons/bi'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { IoIosSend } from 'react-icons/io'
 
@@ -31,20 +31,20 @@ const HomeContact = () => {
                         <IoIosSend className="text-2xl" />
                     </button>
                     <div className=''>
-                        <div className='flex my-5 items-center gap-3 text-white text-xl'>
-                            <BiEnvelope />
+                        <Link href={'mailto:"abdussamadjims@gmail.com"'} title='Mail Id' target='_blank' className='flex my-5 items-center gap-3 text-white text-lg'>
+                            <BiEnvelope className='text-3xl' />
                             abdussamadjims@gmail.com
-                        </div>
-                        <div className='flex mb-10 items-center gap-3 text-white text-xl'>
-                            <BiPhone />
+                        </Link>
+                        <Link href={'tel:+918010512106'} title='Phone No.' target='_blank' className='flex font-bold mb-10 items-center gap-3 text-white text-lg'>
+                            <BiPhone className='text-3xl' />
                             +91 8010 51 2106
-                        </div>
+                        </Link>
                         <div className='flex items-center gap-3 text-white text-xl'>
-                            <Link href={''} className='bg-myColor p-2 rounded-full'>
-                                <FaInstagram className=' text-4xl text-white' />
+                            <Link href={''} target='_blank' title='Instagram' className='bg-transparent border-2 p-2 rounded-full'>
+                                <FaInstagram className=' text-2xl text-white' />
                             </Link>
-                            <Link href={''} className='bg-myColor p-2 rounded-full'>
-                                <FaWhatsapp className=' text-4xl text-white' />
+                            <Link href={''} target='_blank' title='Whatsapp' className='bg-transparent border-2 p-2 rounded-full'>
+                                <FaWhatsapp className=' text-2xl text-white' />
                             </Link>
                         </div>
 
