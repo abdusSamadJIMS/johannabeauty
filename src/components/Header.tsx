@@ -7,6 +7,23 @@ import React from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx'
 const Header = () => {
     const pathname = usePathname()
+    const adminNavLinks = [
+        {
+            href: "/admin",
+            label: "home"
+        },
+        {
+            href: "/admin/services",
+            label: "services"
+        },
+        {
+            href: "/api/auth/signout",
+            label: "sign out"
+        }
+    ]
+    const navLinks = (pathname.includes("admin") ? adminNavLinks : links)
+    if (pathname.includes("admin")) {
+    }
     return (
         <nav className="flex  justify-between w-full items-center p-5 absolute z-10 top-0">
             <div className={'agatho'}>
@@ -14,7 +31,7 @@ const Header = () => {
             </div>
             <div className="flex gap-10 items-center text-white max-md:hidden">
                 {
-                    links.map((link) =>
+                    navLinks.map((link) =>
                     (
                         <Link key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize`}>{link.label}</Link>
 
@@ -39,7 +56,7 @@ const Header = () => {
                             {/* Sidebar content here */}
                             <div className='flex flex-col gap-6 text-2xl text-white font-thin'>
                                 {
-                                    links.map((link) => (
+                                    navLinks.map((link) => (
                                         <Link key={link.href} href={link.href} className={`capitalize ${(link.href == pathname) ? "underline font-medium" : "font-thin"}`}>{link.label}</Link>
 
                                     ))

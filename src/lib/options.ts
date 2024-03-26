@@ -5,6 +5,12 @@ import * as bcrypt from 'bcrypt'
 import { AuthOptions } from "next-auth";
 export const authOptions: AuthOptions = {
     secret: process.env.NEXTAUTH_SECRET,
+    theme: {
+        logo: `${process.env.BASE_URL}/banner1.jpg`,
+        buttonText: "Sign Up",
+        colorScheme: "auto",
+        brandColor: "#9d5836",
+    },
     providers: [
 
         CredentialsProvider({

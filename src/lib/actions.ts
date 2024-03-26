@@ -106,6 +106,14 @@ export async function addSubService(formData: FormData) {
             }
         })
         let subService = service?.SubService
+        if (subService) {
+            for (let i = 0; i < subService.length; i++) {
+                if (subService[i].name == name) {
+                    return { message: "Already Exists !", ok: false }
+                }
+
+            }
+        }
 
         subService?.push({ name, price })
 
@@ -124,5 +132,90 @@ export async function addSubService(formData: FormData) {
         console.log(error);
 
         return { message: "Server Error!", ok: false }
+    }
+}
+
+
+export async function deleteCategory(formData: FormData) {
+    const id = formData.get("id") as string
+    if (!id) {
+        return { message: "Something went wrong!", ok: false }
+    }
+
+    try {
+        const deletedServices = await prisma.service.deleteMany({
+            where: {
+                categoryId: id
+            }
+        })
+        const deletedCategory = await prisma.category.delete({
+            where: {
+                id
+            },
+        })
+        revalidatePath("/")
+        return { message: "Category deleted successfully!", ok: true }
+
+    } catch (error) {
+        return { message: "Something went wrong!", ok: false }
+
+    }
+}
+
+export async function deleteService(formData: FormData) {
+    const id = formData.get("id") as string
+    if (!id) {
+        return { message: "Something went wrong!", ok: false }
+    }
+    try {
+
+
+        const deletedService = await prisma.service.delete({
+            where: {
+                id
+            }
+        })
+        revalidatePath("/")
+        return { message: "Service Deleted Successfully!", ok: true }
+
+    } catch (error) {
+        return { message: "Something went wrong!", ok: false }
+
+    }
+}
+
+export async function deleteSubService(formData: FormData) {
+    const id = formData.get("id") as string
+    const name = formData.get("name") as string
+    if (!(id || name)) {
+        return { message: "Something went wrong!", ok: false }
+    }
+
+    try {
+
+
+        const service = await prisma.service.findUnique({
+            where: { id }
+        })
+
+        let subService = service?.SubService;
+
+        const newSub = subService?.filter((sub) => {
+            if (sub.name != name) {
+                return sub
+            }
+        })
+        const updatedService = await prisma.service.update({
+            where: { id },
+            data: {
+                SubService: newSub
+            }
+        })
+        revalidatePath('/')
+        return { message: "Sub Service Deleted Successfully!", ok: true }
+
+    } catch (error) {
+        return { message: "Something went wrong!", ok: false }
+
     }
 }

@@ -1,37 +1,20 @@
-// import { addService } from '@/lib/actions';
 import CategoryAddForm from '@/components/CategoryAddForm';
+import CategoryTable from '@/components/CategoryTable';
 import prisma from '@/lib/prisma'
-import Link from 'next/link';
-import React from 'react'
 
 const AdminServicesPage = async () => {
     const data = await prisma.category.findMany({});
     return (
-        <div className=''>
+        <div className='mt-10'>
+            <header className={`border-b-4 border-b-myColor mb-20 
+            agatho`}>
+                <h2 className="text-3xl md:text-7xl uppercase">Service Categories</h2>
+            </header>
             <div className='w-full my-10'>
 
                 <CategoryAddForm />
             </div>
-            <table className='table  w-full text'>
-                <thead className='table-header-group agatho text-3xl'>
-                    <tr>
-                        <td>S NO.</td>
-                        <td>Category</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        data.map((d, index) => (
-                            <tr key={index}>
-                                <td>{index + 1}</td>
-                                <td>{d.title}</td>
-                                <td><Link href={'/admin/services/' + d.id}>Details</Link>  </td>
-                            </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
+            <CategoryTable data={data} />
         </div>
     )
 }

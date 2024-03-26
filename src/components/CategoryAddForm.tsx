@@ -1,10 +1,12 @@
 'use client'
 import { addCatogory } from '@/lib/actions'
 import { useEdgeStore } from '@/lib/edgestore'
+import { useRouter } from 'next/navigation'
 import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
 
 const CategoryAddForm = () => {
     const { edgestore } = useEdgeStore()
+    const router = useRouter();
     const [file, setFile] = useState<File>()
     const [isLoading, setIsLoading] = useState(false)
     const ref = useRef<HTMLFormElement>(null)
@@ -23,7 +25,7 @@ const CategoryAddForm = () => {
                     console.log(progress);
                 },
             })
-            const res = await fetch(`${process.env.BASE_URL}/api/admin/createCategory`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/createCategory`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -38,6 +40,7 @@ const CategoryAddForm = () => {
                 description: ""
             })
             ref.current?.reset();
+            router.refresh();
 
         }
     }
