@@ -7,7 +7,7 @@ const layout = ({ children }: { children: ReactNode }) => {
     return (
         <main className="min-h-screen">
             <AdminHero />
-            <BackButton />
+            {/* <BackButton /> */}
             <div className="mb-10 md:px-20 px-8">
                 {children}
             </div>
