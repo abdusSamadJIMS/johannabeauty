@@ -20,10 +20,10 @@ const HomeAbout = () => {
                 </header>
                 <div className={`text-center text-4xl md:text-7xl flex flex-col justify-center gap-6 h-full 
                 agatho`}>
-                    <h2>Concept</h2>
-                    <h2>The Founders</h2>
-                    <h2>Salon Opening</h2>
-                    <h2>Our Team</h2>
+                    <Link href={'/about#concept'}>Concept</Link>
+                    <Link href={'/about#founder'}>The Founder</Link>
+                    <Link href={'/about#salon-timing'}>Salon Timing</Link>
+                    <Link href={'/about#out-team'}>Our Team</Link>
                     <Link href={'/about'} className="flex justify-center items-center gap-2 text-lg border w-fit mx-auto px-3 py-1 rounded-full border-myColor">Learn more
                         <HiArrowLongRight className='max-md:mt-1 font-bold' />
                     </Link>

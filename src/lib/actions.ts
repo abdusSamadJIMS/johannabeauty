@@ -56,7 +56,7 @@ export async function revalidate2() {
 
 export async function fetchAllCategories() {
     try {
-        const categories = await prisma.category.findMany();
+        const categories = await prisma.category.findMany({ include: { Service: true } });
         revalidatePath('/');
         return categories
     } catch (error) {
@@ -80,6 +80,14 @@ export async function fetchUniqueCategory(id: string) {
 
     }
 }
+
+// export async function fetchAllServices() {
+//     try {
+//         const services = await prisma.service.findMany({})
+//     } catch (error) {
+
+//     }
+// }
 
 export async function addCatogory(formData: FormData) {
     const title = formData.get('title') as string

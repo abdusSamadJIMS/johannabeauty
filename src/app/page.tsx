@@ -11,15 +11,20 @@ import HomeOffers from "@/components/HomeOffers";
 import { BiEnvelope, BiUser } from "react-icons/bi";
 import { IoIosSend } from "react-icons/io";
 import HomeContact from "@/components/HomeContact";
+import { fetchAllCategories } from "@/lib/actions";
 
-export default function Home() {
+export default async function Home() {
+  const categories = await fetchAllCategories();
   return (
     <main className="">
       <Hero />
       <HomeAbout />
-      <HomeServices />
+      <HomeServices categories={categories} />
       <HomeOffers />
-      <HomeServicePrice />
+      {
+        categories &&
+        <HomeServicePrice categories={categories} />
+      }
       <HomeContact />
     </main>
   );

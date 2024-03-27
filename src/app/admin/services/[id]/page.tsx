@@ -66,13 +66,13 @@ const CategoryDetail = async ({ params }: { params: { id: string } }) => {
                                     s.SubService.map((ss, ii) => (
                                         <ul className='mb-2 w-full capitalize' key={ii}>
                                             <li className='w-full flex justify-between items-center capitalize'><p className="w-[40%]">{ss.name}</p> <p className="w-[40%]">{ss.price}</p>
-                                                <p className='w-[20%] '>
+                                                <div className='w-[20%] '>
                                                     <form action={deleteSubService}>
                                                         <input type="hidden" name="id" value={s.id} />
                                                         <input type="hidden" name="name" value={ss.name} />
                                                         <button type="submit" className='btn btn-xs btn-error'>Delete</button>
                                                     </form>
-                                                </p>
+                                                </div>
                                             </li>
                                         </ul>
                                     ))

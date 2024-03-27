@@ -7,16 +7,12 @@ export const links = [
         label: "about us",
         href: "/about"
     },
-    {
-        label: "services",
-        href: "/services"
-    },
-    {
-        label: "gallery",
-        href: "/gallery"
-    },
-    {
-        label: "contact",
-        href: "/contact"
-    },
+    // {
+    //     label: "gallery",
+    //     href: "/gallery"
+    // },
+    // {
+    //     label: "contact",
+    //     href: "/contact"
+    // },
 ]

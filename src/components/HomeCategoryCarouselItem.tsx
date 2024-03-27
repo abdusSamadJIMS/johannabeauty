@@ -1,8 +1,8 @@
 import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 
-const HomeServiceCarouselItem = ({ id, image, title, description }: {
-    id: string, image: StaticImageData, title: string, description: string
+const HomeCategoryCarouselItem = ({ id, image, title, description }: {
+    id: string, image: StaticImageData | string, title: string, description: string
 }) => {
     return (
         <div id={`service${id}`} className="carousel-item flex-col  w-full sm:w-[48%] md:w-[24%] ">
@@ -19,4 +19,4 @@ const HomeServiceCarouselItem = ({ id, image, title, description }: {
     )
 }
 
-export default HomeServiceCarouselItem
+export default HomeCategoryCarouselItem

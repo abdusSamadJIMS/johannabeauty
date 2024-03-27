@@ -1,4 +1,8 @@
 import React from 'react'
+import Concept from './Concept'
+import Founder from './Founder'
+import Timing from './Timing'
+import OutTeam from './OutTeam'
 
 const AboutPage = () => {
     return (
@@ -15,8 +19,14 @@ const AboutPage = () => {
                     agatho 
                     text-center
                     `}>About Johanna Beauty</h2>
-                    <p className='max-w-lg text-white agatho text-center max-md:text-xs'>We invite you to familiarize yourself with our beauty salon, where you will find a full range of services from professional masters using the most modern technologies and cosmetics from leading brands</p>
+                    <p className='max-w-lg text-white agatho text-center max-md:text-sm  opacity-80 text-lg'>We invite you to familiarize yourself with our beauty salon, where you will find a full range of services from professional masters using the most modern technologies and cosmetics from leading brands</p>
                 </div>
+            </div>
+            <div className='px-8 md:px-20 my-20'>
+                <Concept />
+                <Founder />
+                <Timing />
+                <OutTeam />
             </div>
 
         </main>
