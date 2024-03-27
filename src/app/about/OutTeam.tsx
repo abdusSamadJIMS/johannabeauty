@@ -3,7 +3,7 @@ import img1 from '../../../public/static/abdusSamad.png'
 import Image from 'next/image'
 
 const OutTeam = () => {
-    const repeat = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,]
+    const repeat = [1, 1, 1, 1, 1, 1, 1]
     return (
         <div
             id='our-team'
