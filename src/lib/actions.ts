@@ -340,3 +340,75 @@ export async function updateSubService(formData: FormData) {
         return { message: "Something went wrong !", ok: false }
     }
 }
+
+
+export async function fetchContactInfo() {
+    try {
+        const contactInfo = await prisma.contactInfo.findFirst({});
+        revalidatePath('/')
+        return contactInfo
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function updateContactInfo(formData: FormData) {
+    const id = formData.get("id") as string
+    const whatsApp = formData.get("whatsApp") as string
+    const instagram = formData.get("instagram") as string
+    const phoneNumber = formData.get("phoneNumber") as string
+    const mailId = formData.get("mailId") as string
+
+    if (!(id || whatsApp || instagram || phoneNumber || mailId)) {
+        return { message: "Something went wrong", ok: false }
+    }
+
+    try {
+        const updatedContactInfo = await prisma.contactInfo.update({
+            where: { id },
+            data: {
+                instagram, mailId, phoneNumber, whatsApp
+            }
+        })
+        revalidatePath('/')
+        return { message: "Update Successfully", ok: true }
+
+    } catch (error) {
+        console.log(error);
+
+        return { message: "Something went wrong", ok: false }
+
+    }
+}
+
+export async function fetchAllOffers() {
+    try {
+        const offers = await prisma.offer.findMany();
+        revalidatePath("/");
+        return offers;
+    } catch (error) {
+
+    }
+}
+
+export async function deleteOffer(formData: FormData) {
+    const id = formData.get('id') as string
+    const image = formData.get('image') as string
+
+    if (!(id || image)) {
+        return { message: "All fields are required", ok: false }
+    }
+
+    try {
+        const res = await backendClient.publicFiles.deleteFile({
+            url: image
+        })
+        const deletedOffer = await prisma.offer.delete({ where: { id } })
+        revalidatePath("/")
+        return { message: "Deleted successfully", ok: true }
+
+    } catch (error) {
+        return { message: "Something went wrong", ok: false }
+
+    }
+}

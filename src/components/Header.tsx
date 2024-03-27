@@ -1,9 +1,11 @@
 'use client'
 
 import { links } from '@/lib/links'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import logo from '../../public/static/logo/logoJohanna.png';
 import { RxHamburgerMenu } from 'react-icons/rx'
 const Header = () => {
     const pathname = usePathname()
@@ -17,6 +19,10 @@ const Header = () => {
             label: "services"
         },
         {
+            href: "/admin/contact-info",
+            label: "contact info"
+        },
+        {
             href: "/api/auth/signout",
             label: "sign out"
         }
@@ -27,13 +33,16 @@ const Header = () => {
     return (
         <nav className="flex  justify-between w-full items-center p-5 absolute z-10 top-0">
             <div className={'agatho'}>
-                <Link href={'/'} className="font-bold md:text-2xl tracking-wider text-white">Johanna Beauty</Link>
+                <Link href={'/'} className="font-bold md:text-2xl tracking-wider bg-transparent">
+                    <Image src={logo} alt='Johanna-Logo' className='w-14 md:w-20 bg-white rounded-full bg-opacity-80'
+                    />
+                </Link>
             </div>
             <div className="flex gap-10 items-center text-white max-md:hidden">
                 {
                     navLinks.map((link) =>
                     (
-                        <Link key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize`}>{link.label}</Link>
+                        <Link key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize mb-10`}>{link.label}</Link>
 
                     ))
                 }

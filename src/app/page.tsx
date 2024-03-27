@@ -11,23 +11,32 @@ import HomeOffers from "@/components/HomeOffers";
 import { BiEnvelope, BiUser } from "react-icons/bi";
 import { IoIosSend } from "react-icons/io";
 import HomeContact from "@/components/HomeContact";
-import { fetchAllCategories } from "@/lib/actions";
+import { fetchAllCategories, fetchAllOffers, fetchContactInfo } from "@/lib/actions";
 import TestHero from "@/components/TestHero";
 
 export default async function Home() {
   const categories = await fetchAllCategories();
+  const contactInfo = await fetchContactInfo();
+  const offers = await fetchAllOffers();
   return (
     <main className="">
-      <Hero />
+      <Hero whatsApp={contactInfo?.whatsApp || "0"} />
       <TestHero />
       <HomeAbout />
       <HomeServices categories={categories} />
-      <HomeOffers />
+      {
+        offers &&
+        <HomeOffers offers={offers} />
+      }
       {
         categories &&
         <HomeServicePrice categories={categories} />
       }
-      <HomeContact />
+      <HomeContact instagram={contactInfo?.instagram || ''}
+        whatsApp={contactInfo?.whatsApp || ''}
+        phoneNumber={contactInfo?.phoneNumber || ''}
+        mailId={contactInfo?.mailId || ''}
+      />
     </main>
   );
 }

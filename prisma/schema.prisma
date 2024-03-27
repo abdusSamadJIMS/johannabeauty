@@ -37,3 +37,17 @@ model user {
   password String
   username String @unique
 }
+
+model ContactInfo {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  whatsApp    String?
+  instagram   String?
+  phoneNumber String?
+  mailId      String?
+}
+
+model Offer {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  image     String
+  createdAt DateTime @default(now())
+}
