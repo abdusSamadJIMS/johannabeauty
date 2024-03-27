@@ -88,7 +88,7 @@ const HomeServicePrice = ({ categories }: { categories: Categories }) => {
                                                 <li className='uppercase w-full flex justify-between text-sm mb-3' key={`${index}sub`}>
 
                                                     <p className='font-medium capitalize'>{sub.name}</p>
-                                                    <p >₹ {sub.price}/-</p>
+                                                    {/*<p >₹ {sub.price}/-</p>*/}
                                                 </li>
                                             )
                                             )
