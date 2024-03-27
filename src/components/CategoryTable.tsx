@@ -1,7 +1,9 @@
+'use client'
 import { deleteCategory } from '@/lib/actions'
 import { Category } from '@prisma/client'
 import Link from 'next/link'
 import React from 'react'
+import ServiceDeleteDialogButton from './ServiceDeleteDialogButton'
 
 const CategoryTable = ({ data }: { data: Category[] }) => {
     return (
@@ -23,11 +25,7 @@ const CategoryTable = ({ data }: { data: Category[] }) => {
                                 <td className='capitalize'>{d.title}</td>
                                 <td><Link href={'/admin/services/' + d.id} className='link link-hover'>Details</Link>  </td>
                                 <td className='flex justify-end'>
-                                    <form action={deleteCategory}>
-                                        <input type="hidden" name="id" value={d.id} />
-                                        <input type="hidden" name="image" value={d.image} />
-                                        <button type="submit" className='btn btn-error'>Delete</button>
-                                    </form>
+                                    <ServiceDeleteDialogButton id={d.id} title={d.title} image={d.image} />
                                 </td>
                             </tr>
                         ))

@@ -4,6 +4,13 @@ import Image from 'next/image';
 import { redirect } from 'next/navigation'
 import React from 'react'
 import CategoryUpdateForm from './CategoryUpdateForm';
+import AddServiceForm from './AddServiceForm';
+import DeleteServiceForm from './DeleteServiceForm';
+import { BiClipboard, BiNotepad } from 'react-icons/bi';
+import UpdateServiceForm from './UpdateServiceForm';
+import DeleteSubServiceForm from './DeleteSubServiceForm';
+import AddSubServiceForm from './AddSubServiceForm';
+import UpdateSubServiceForm from './UpdateSubServiceForm';
 
 const CategoryDetail = async ({ params }: { params: { id: string } }) => {
 
@@ -40,11 +47,7 @@ const CategoryDetail = async ({ params }: { params: { id: string } }) => {
                         Add New Service
                     </div>
                     <div className="collapse-content">
-                        <form action={addService}>
-                            <input type="text" name='name' className='input w-full my-2' placeholder='Name of sub service' />
-                            <input type="hidden" name="categoryId" value={Category.id} />
-                            <button type="submit" className='btn w-full btn-success my-2'>Add</button>
-                        </form>
+                        <AddServiceForm id={Category.id} />
                     </div>
                 </div>
                 {
@@ -66,12 +69,10 @@ const CategoryDetail = async ({ params }: { params: { id: string } }) => {
                                     s.SubService.map((ss, ii) => (
                                         <ul className='mb-2 w-full capitalize' key={ii}>
                                             <li className='w-full flex justify-between items-center capitalize'><p className="w-[40%]">{ss.name}</p> <p className="w-[40%]">{ss.price}</p>
-                                                <div className='w-[20%] '>
-                                                    <form action={deleteSubService}>
-                                                        <input type="hidden" name="id" value={s.id} />
-                                                        <input type="hidden" name="name" value={ss.name} />
-                                                        <button type="submit" className='btn btn-xs btn-error'>Delete</button>
-                                                    </form>
+                                                <div className=' w-[20%] flex '>
+                                                    <UpdateSubServiceForm oldName={ss.name} id={s.id} oldPrice={ss.price} />
+                                                    <DeleteSubServiceForm id={s.id} name={ss.name} />
+
                                                 </div>
                                             </li>
                                         </ul>
@@ -84,23 +85,14 @@ const CategoryDetail = async ({ params }: { params: { id: string } }) => {
                                             Add New Sub Service
                                         </div>
                                         <div className="collapse-content">
-                                            <form action={addSubService} className='flex flex-col'>
-                                                <div className="flex justify-evenly">
-
-                                                    <input type="text" name='name' className='input w-[45%] my-2 bg-transparent border-myColor' placeholder="Name of sub service's Service" />
-                                                    <input type="number" name='price' className='input w-[45%] my-2 bg-transparent border-myColor' placeholder="Price of sub service's Service" />
-                                                </div>
-                                                <input type="hidden" name="serviceId" value={s.id} />
-                                                <button type="submit" className='btn w-full btn-success my-2'>Add</button>
-                                            </form>
+                                            <AddSubServiceForm id={s.id} />
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <form action={deleteService}>
-                                        <input type="hidden" name="id" value={s.id} />
-                                        <button type="submit" className='btn btn-error w-full'>Delete {s.name}</button>
-                                    </form>
+                                <li className='list-none flex items-center gap-5'>
+                                    {/*  */}
+                                    <UpdateServiceForm id={s.id} name={s.name} />
+                                    <DeleteServiceForm id={s.id} name={s.name} />
                                 </li>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ const layout = ({ children }: { children: ReactNode }) => {
         <main className="min-h-screen">
             <AdminHero />
             <BackButton />
-            <div className="mb-10 md:px-20 px-8">
+            <div className="mb-10 md:px-20 px-1">
                 {children}
             </div>
         </main>

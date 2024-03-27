@@ -136,7 +136,7 @@ export async function addService(formData: FormData) {
             }
         })
         revalidatePath('/')
-        return { message: "Sub Service added Successfully !", ok: true }
+        return { message: "Service added Successfully !", ok: true }
     } catch (error) {
         return { message: "Server Error !", ok: false }
 
@@ -273,5 +273,70 @@ export async function deleteSubService(formData: FormData) {
     } catch (error) {
         return { message: "Something went wrong!", ok: false }
 
+    }
+}
+
+
+export async function updateService(formData: FormData) {
+    const id = formData.get("id") as string
+    const name = formData.get("name") as string
+
+    if (!(id || name)) {
+        return { message: "Something went wrong !", ok: false }
+    }
+    try {
+        const updatedService = await prisma.service.update({
+            where: { id },
+            data: { name }
+        })
+        if (!updateService) {
+            return { message: "Something went wrong !", ok: false }
+        }
+        revalidatePath('/')
+        return { message: "Service updated successfully !", ok: true }
+
+    } catch (error) {
+        return { message: "Something went wrong !", ok: false }
+
+    }
+}
+
+export async function updateSubService(formData: FormData) {
+    const id = formData.get('id') as string
+    const oldName = formData.get('oldName') as string
+    const name = formData.get('name') as string
+    const priceStr = formData.get('price') as string
+    const price = parseInt(priceStr)
+    console.log("oldName:", oldName);
+    console.log("name:", name);
+
+
+    if (!(id || name || priceStr)) {
+        return { message: "Something went wrong !", ok: false }
+    }
+    try {
+        const service = await prisma.service.findUnique({ where: { id } })
+        const subServices = service?.SubService;
+        let newSubServices;
+        if (subServices) {
+            newSubServices = subServices?.map(obj => {
+                if (obj.name.trim() === oldName.trim()) {
+
+                    return { ...obj, name, price };
+                } else
+                    return obj;
+            });
+        }
+
+        const updatedService = await prisma.service.update({
+            where: { id },
+            data: {
+                SubService: newSubServices
+            }
+        })
+        revalidatePath("/")
+        return { message: "Sub Service Updated Successfully !", ok: true }
+    } catch (error) {
+        return { message: "Something went wrong !", ok: false }
     }
 }

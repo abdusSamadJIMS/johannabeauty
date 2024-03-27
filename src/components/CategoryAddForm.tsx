@@ -3,6 +3,7 @@ import { addCatogory, revalidate } from '@/lib/actions'
 import { useEdgeStore } from '@/lib/edgestore'
 import { useRouter } from 'next/navigation'
 import React, { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react'
+import toast from 'react-hot-toast'
 
 const CategoryAddForm = () => {
     const { edgestore } = useEdgeStore()
@@ -36,6 +37,11 @@ const CategoryAddForm = () => {
 
             )
             const data = await res.json();
+            if (data.ok) {
+                toast.success(data.message)
+            } else {
+                toast.error(data.message)
+            }
             // console.log(data);
             await revalidate();
             setIsLoading(false)
