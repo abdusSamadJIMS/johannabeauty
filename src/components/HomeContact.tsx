@@ -1,16 +1,26 @@
+'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiEnvelope, BiPhone, } from 'react-icons/bi'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { IoIosSend } from 'react-icons/io'
 
 const HomeContact = () => {
+    const [isIOS, setIsIOS] = useState<boolean>(false);
+
+    useEffect(() => {
+        // Check if window and navigator are available (browser environment)
+        if (typeof window !== 'undefined' && window.navigator) {
+            setIsIOS(/iPad|iPhone|iPod/.test(window.navigator.userAgent));
+        }
+    }, []);
+
     return (
-        <div className="my-10 text-myColor bg-[url('/static/contactImg.jpg')] min-h-screen
+        <div className={`my-10 text-myColor bg-[url('/static/contactImg.jpg')] min-h-screen
     bg-cover
-    bg-fixed
+    ${isIOS ? "" : "bg-fixed"}
     hero
-    ">
+    `}>
             <div className="hero-overlay bg-opacity-55"></div>
             <div className="hero-content md:justify-start w-full max-md:flex-col">
                 <form action="" className="items-start text-myColor max-md:w-full w-1/2">

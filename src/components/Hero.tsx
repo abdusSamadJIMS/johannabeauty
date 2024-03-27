@@ -1,13 +1,21 @@
-// import { agatho } from '@/app/layout'
+'use client'
 import Link from 'next/link'
-import React from 'react'
-import { RxHamburgerMenu } from 'react-icons/rx'
+import React, { useEffect, useState } from 'react'
 
 const Hero = () => {
+    const [isIOS, setIsIOS] = useState<boolean>(false);
+
+    useEffect(() => {
+        // Check if window and navigator are available (browser environment)
+        if (typeof window !== 'undefined' && window.navigator) {
+            setIsIOS(/iPad|iPhone|iPod/.test(window.navigator.userAgent));
+        }
+    }, []);
+
     return (
-        <div className="hero min-h-screen bg-[url('/static/heroImg.jpg')]
-        bg-fixed bg-center bg-no-repeat
-        relative">
+        <div className={`hero min-h-screen bg-[url('/static/heroImg.jpg')]
+        ${isIOS ? "" : "bg-fixed"} bg-center bg-no-repeat bg-cover
+        relative`}>
             <div className="hero-overlay bg-opacity-60"></div>
 
             <div className="hero-content text-center  text-white">

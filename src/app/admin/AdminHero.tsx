@@ -3,12 +3,13 @@ import React from 'react'
 
 const AdminHero = () => {
 
-
     return (
         <div className="bg-[url('/static/heroImg.jpg')] h-[50vh]
             hero
-            bg-fixed
             bg-cover
+            bg-center
+            bg-no-repeat
+            bg-scroll
             ">
             <div className="hero-overlay bg-opacity-70"></div>
             <div className="hero-content">
