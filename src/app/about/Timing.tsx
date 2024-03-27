@@ -7,7 +7,7 @@ const Timing = () => {
     return (
         <div
             id='salon-timing'
-            className='grid grid-cols-2 md:grid-cols-4 gap-5 text-myColor'
+            className='grid grid-cols-2 md:grid-cols-4 gap-5 text-myColor py-10'
         >
             <div className="col-span-1 md:h-[45vw] relative  max-md:hidden hero bg-[url('/static/services/hariTreatment.jpg')]">
                 <div className="hero-overlay bg-opacity-45"></div>

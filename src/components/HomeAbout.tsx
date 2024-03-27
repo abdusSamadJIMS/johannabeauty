@@ -23,7 +23,7 @@ const HomeAbout = () => {
                     <Link href={'/about#concept'}>Concept</Link>
                     <Link href={'/about#founder'}>The Founder</Link>
                     <Link href={'/about#salon-timing'}>Salon Timing</Link>
-                    <Link href={'/about#out-team'}>Our Team</Link>
+                    <Link href={'/about#our-team'}>Our Team</Link>
                     <Link href={'/about'} className="flex justify-center items-center gap-2 text-lg border w-fit mx-auto px-3 py-1 rounded-full border-myColor">Learn more
                         <HiArrowLongRight className='max-md:mt-1 font-bold' />
                     </Link>

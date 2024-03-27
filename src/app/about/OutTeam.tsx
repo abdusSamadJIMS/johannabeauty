@@ -6,8 +6,8 @@ const OutTeam = () => {
     const repeat = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,]
     return (
         <div
-            id='out-team'
-            className='text-myColor my-20'>
+            id='our-team'
+            className='text-myColor py-20'>
             <h2 className='text-5xl md:text-7xl uppercase agatho text-center mb-5'>Our Team</h2>
             <div className='custom-carousel-container flex overflow-auto gap-3 max-w-full scroll-smooth snap-mandatory'
             >
@@ -24,8 +24,6 @@ const OutTeam = () => {
                         </div>
                     ))
                 }
-
-
             </div>
         </div>
     )
