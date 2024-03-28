@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     title: "JOHANNA BEAUTY | YOUR BEAUTY DESTINATION",
     url: "https://johannabeauty.vercel.app",
   },
+  keywords: ['beauty', 'fashion', 'beautiful', 'acne'],
+
   // verification: { google: 'kX8ZIUq1cUGLuxBV3cf9lXOy5gKkT5ihjHXPZa-y2tE' }
 };
 
