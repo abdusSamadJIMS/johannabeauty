@@ -19,7 +19,8 @@ const AboutPage = () => {
                     agatho 
                     text-center
                     `}>About Johanna Beauty</h2>
-                    <p className='max-w-lg text-white agatho text-center max-md:text-sm  opacity-80 text-lg'>We invite you to familiarize yourself with our beauty salon, where you will find a full range of services from professional masters using the most modern technologies and cosmetics from leading brands</p>
+                    <p className='max-w-lg text-white agatho text-center max-md:text-sm  opacity-80 text-lg'>Welcome to Johanna Beauty Salon, where beauty meets passion and expertise.
+                    </p>
                 </div>
             </div>
             <div className='px-8 md:px-20 my-20'>

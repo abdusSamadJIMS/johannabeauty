@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 type SubService = {
     name: string;
     price: number;
@@ -23,3 +25,10 @@ type Category = {
 };
 
 export type Categories = Category[];
+
+export type colType = {
+    id: string | undefined,
+    image: string | StaticImageData,
+    name: string,
+    createdAt: Date | undefined
+}

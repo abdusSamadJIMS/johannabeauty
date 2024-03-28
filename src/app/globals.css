@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html,
+* {
+    transition: all;
+    transition-duration: 1000ms;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 6px;
@@ -34,4 +41,17 @@ body {
 
 .agatho {
     font-family: var(--font-agatho);
+}
+
+
+.imgText {
+    transform: translateY(100px);
+}
+
+.imgDiv:hover .imgText {
+    transform: translateY(-4rem);
+}
+
+.imgDiv:focus .imgText {
+    transform: translateY(-4rem);
 }

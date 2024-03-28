@@ -16,7 +16,10 @@ const HomeContact = ({ whatsApp, instagram, mailId, phoneNumber }: { whatsApp: s
     }, []);
 
     return (
-        <div className={`my-10 text-myColor bg-[url('/static/contactImg.jpg')] min-h-screen
+        <div className={`my-10 text-myColor
+         md:bg-[url('/static/contactImg.jpg')]
+         bg-[url('/static/contactImgMobile.jpg')]
+          min-h-screen
     bg-cover
     ${isIOS ? "" : "bg-fixed"}
     hero

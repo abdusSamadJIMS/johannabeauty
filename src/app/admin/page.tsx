@@ -7,8 +7,12 @@ const AdminPage = () => {
         }
     }
     return (
-        <div>
-
+        <div className='flex justify-center items-center h-full'>
+            <h1 className='agatho text-5xl md:text-7xl text-center mt-32 font-light'>
+                Hello, <span className='text-myColor font-black'>
+                    Swean
+                </span>
+            </h1>
         </div>
     )
 }

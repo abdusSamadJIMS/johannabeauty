@@ -412,3 +412,39 @@ export async function deleteOffer(formData: FormData) {
 
     }
 }
+
+export async function fetchAllWork() {
+
+    try {
+        const works = await prisma.work.findMany();
+        revalidatePath("/");
+        return works;
+    } catch (error) {
+
+    }
+}
+
+export async function deleteWork(formData: FormData) {
+    const id = formData.get("id") as string
+    const fileUrl = formData.get("image") as string
+
+    if (!id) {
+        return { message: "Something went wrong", ok: false }
+    }
+    try {
+        const res = await backendClient.publicFiles.deleteFile({
+            url: fileUrl,
+        });
+        const deletedWork = await prisma.work.delete({ where: { id } })
+        if (!deleteWork) {
+            return { message: "Something went wrong", ok: false }
+
+        }
+        revalidatePath('/')
+        return { message: "Deleted Successfully", ok: true }
+
+    } catch (error) {
+        return { message: "Something went wrong", ok: false }
+
+    }
+}

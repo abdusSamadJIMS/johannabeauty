@@ -11,11 +11,14 @@ const Concept = () => {
                 </h2>
                 <div className=' max-md:text-sm opacity-65'>
                     <p>
-                        Johanna Beauty is more than just a beauty parlor; it&apos;s a sanctuary for self-care and empowerment. Nestled in the heart of the city, it offers a holistic approach to beauty that goes beyond mere aesthetics, focusing on enhancing both inner and outer beauty. Johanna Beauty aims to create a haven where clients can rejuvenate their bodies, minds, and spirits while indulging in luxurious beauty treatments.
+                        With over 22 years of combined experience in the beauty industry, we bring a wealth of knowledge and skill to every service we offer. Our journey into the beauty industry began with a simple passion for making people feel confident and beautiful. After years of honing our skills and gaining invaluable experience, we decided to channel that passion into creating a salon where clients could experience the transformative power of beauty in a welcoming and indulgent atmosphere.
+
                     </p>
                 </div>
                 <div className='max-md:text-sm opacity-65'>
-                    <p>At Johanna Beauty, we believe that beauty is not just skin deep; it&apos;s a reflection of inner harmony and self-love. Our mission is to inspire and empower individuals to embrace their uniqueness and celebrate their journey towards holistic well-being, one radiant smile at a time.</p>
+                    <p>
+                        At our salon, we prioritize providing exceptional service tailored to each client&apos;s unique needs and desires. We believe in fostering a sense of empowerment and confidence through our treatments, whether it&apos;s a rejuvenating facial, a precision haircut, or a luxurious spa experience. With our expertise and dedication, we strive to exceed expectations and leave every client feeling radiant and rejuvenated.
+                    </p>
                 </div>
             </div>
         </>

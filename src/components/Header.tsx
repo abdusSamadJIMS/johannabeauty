@@ -23,6 +23,14 @@ const Header = () => {
             label: "contact info"
         },
         {
+            href: "/admin/offers",
+            label: "offers"
+        },
+        {
+            href: "/admin/work",
+            label: "work"
+        },
+        {
             href: "/api/auth/signout",
             label: "sign out"
         }
@@ -42,7 +50,9 @@ const Header = () => {
                 {
                     navLinks.map((link) =>
                     (
-                        <Link key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize mb-10`}>{link.label}</Link>
+                        <Link key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize mb-10
+                        ${pathname == "/gallery" ? "text-black" : ""}
+                        `}>{link.label}</Link>
 
                     ))
                 }

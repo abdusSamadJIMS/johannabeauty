@@ -1,7 +1,4 @@
-import Image from 'next/image'
 import React from 'react'
-import img1 from '../../../public/static/services/hariTreatment.jpg'
-import img2 from '../../../public/static/services/eyeTreatment.jpg'
 
 const Timing = () => {
     return (
@@ -24,33 +21,33 @@ const Timing = () => {
                     <ul className='list'>
                         <li className="mb-3">
                             <p className='font-semibold md:text-xl'>monday</p>
-                            <p className='opacity-75 max-md:text-sm'>10AM - 7Pm</p>
+                            <p className='opacity-75 max-md:text-sm'>10:30AM - 8:00PM</p>
                         </li>
-                        <li className="mb-3 pl-10">
+                        <li className="mb-3">
                             <p className='font-semibold md:text-xl'>tuesday</p>
-                            <p className='opacity-75 max-md:text-sm'>10AM - 7Pm</p>
+                            <p className='opacity-75 max-md:text-sm'>Off</p>
                         </li>
                         <li className="mb-3">
                             <p className='font-semibold md:text-xl'>wednesday</p>
-                            <p className='opacity-75 max-md:text-sm'>10AM - 7Pm</p>
+                            <p className='opacity-75 max-md:text-sm'>10:30AM - 8:00PM</p>
                         </li>
-                        <li className="mb-3 pl-10">
+                        <li className="mb-3">
                             <p className='font-semibold md:text-xl'>thursday</p>
-                            <p className='opacity-75 max-md:text-sm'>10AM - 7Pm</p>
+                            <p className='opacity-75 max-md:text-sm'>10:30AM - 8:00PM</p>
                         </li>
                         <li className="mb-3">
                             <p className='font-semibold md:text-xl'>friday</p>
-                            <p className='opacity-75 max-md:text-sm'>10AM - 7Pm</p>
+                            <p className='opacity-75 max-md:text-sm'>10:30AM - 8:00PM</p>
                         </li>
-                        <li className="mb-3 pl-10">
+                        <li className="mb-3">
                             <p className='font-semibold md:text-xl'>saturday</p>
-                            <p className='opacity-75 max-md:text-sm'>10AM - 7Pm</p>
+                            <p className='opacity-75 max-md:text-sm'>10:30AM - 8:00PM</p>
                         </li>
                         <li className="mb-3">
                             <p className='font-semibold md:text-xl'>sunday</p>
-                            <p className='opacity-75 max-md:text-sm'>10AM - 7Pm</p>
+                            <p className='opacity-75 max-md:text-sm'>10:30AM - 8:00PM</p>
                         </li>
-                        <li className="mb-3 pl-10">
+                        <li className="mb-3">
                             <p className='font-semibold md:text-xl'>holiday</p>
                             <p className='opacity-75 max-md:text-sm'>Timing may vary</p>
                         </li>
