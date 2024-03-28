@@ -2,20 +2,16 @@ import { StaticImageData } from 'next/image'
 import GalleryCol from './GalleryCol'
 import { colType } from '@/lib/types';
 
-import img1 from '../../../public/static/services/groomingService.jpg'
-import img2 from '../../../public/static/services/bodyTreatment.jpg'
-import img3 from '../../../public/static/abdusSamad.png'
-import img4 from '../../../public/static/clientImage.jpg'
 import { fetchAllWork } from '@/lib/actions';
 
 
 const Gallery = async () => {
 
     const works = await fetchAllWork();
-    let col1: colType[] = [{ image: img1, name: "Hair", id: "", createdAt: undefined }];
-    let col2: colType[] = [{ image: img2, name: "Hair", id: "", createdAt: undefined }];
-    let col3: colType[] = [{ image: img3, name: "Hair", id: "", createdAt: undefined }];
-    let col4: colType[] = [{ image: img4, name: "Hair", id: "", createdAt: undefined }];
+    let col1: colType[] = [];
+    let col2: colType[] = [];
+    let col3: colType[] = [];
+    let col4: colType[] = [];
 
     if (works) {
         let result = [];

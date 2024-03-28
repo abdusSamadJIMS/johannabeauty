@@ -1,5 +1,12 @@
 import React from 'react'
 import Gallery from './Gallery'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: "Our Gallery",
+    description: "Dive into our gallery and witness the stunning transformations created by our expert team at Johanna Beauty. Experience the beauty journey firsthand."
+}
+
 
 
 const galleryPage = () => {

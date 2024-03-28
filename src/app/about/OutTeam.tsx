@@ -1,5 +1,4 @@
 import React from 'react'
-import img1 from '../../../public/static/abdusSamad.png'
 import Image from 'next/image'
 
 const OutTeam = () => {
@@ -15,7 +14,7 @@ const OutTeam = () => {
                     repeat?.map((item, i) => (
                         <div key={i} className='custom-carousel-item overflow-scroll flex-shrink-0 w-[50vw] md:w-[15vw] pb-5'>
                             <div className='h-56 md:h-[20rem] relative mb-2 w-full'>
-                                <Image src={img1} alt='img' fill className='object-cover' />
+                                <Image src={''} alt='img' fill className='object-cover' />
                             </div>
                             {/* <div className='text-center'>
                                 <h5 className='font-semibold'>Abdus Samad</h5>

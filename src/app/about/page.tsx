@@ -3,6 +3,12 @@ import Concept from './Concept'
 import Founder from './Founder'
 import Timing from './Timing'
 import OutTeam from './OutTeam'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: "About Us",
+    description: "Unveil our story: where passion meets expertise in beauty. With 22+ years' experience, indulge in services celebrating confidence and beauty. Join us!"
+}
 
 const AboutPage = () => {
     return (
