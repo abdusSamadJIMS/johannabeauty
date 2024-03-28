@@ -8,6 +8,7 @@ const AddWorkForm = ({ total }: { total: number }) => {
     const refBtn = useRef<HTMLButtonElement>(null)
     const ref = useRef<HTMLFormElement>(null)
     const [work, setWork] = useState("")
+    const [prog, setProg] = useState(0)
 
     const [disable, setDisable] = useState(false)
     const [file, setFile] = useState<File>()
@@ -21,6 +22,7 @@ const AddWorkForm = ({ total }: { total: number }) => {
                 file,
                 onProgressChange: (progress) => {
                     // you can use this to show a progress bar
+                    setProg(progress)
                     console.log(progress);
                 },
             });
@@ -60,7 +62,15 @@ const AddWorkForm = ({ total }: { total: number }) => {
                     <form
                         ref={ref}
                         onSubmit={onSubmitHandler} className='max-w-md'>
-                        <input disabled={disable || (total >= 10)}
+                        {
+                            disable &&
+                            <div className="text-base">
+                                <progress className="progress w-full" value={prog} max="100"></progress>
+                                <h5 className="text-right">Uploading ... {prog}</h5>
+                            </div>
+
+                        }
+                        <input disabled={disable || (total >= 40)}
                             onChange={(e) => {
                                 setFile(e.target.files?.[0]);
                             }}
@@ -71,11 +81,11 @@ const AddWorkForm = ({ total }: { total: number }) => {
                                 setWork(e.target.value)
                             }}
                             value={work} type="text" name="work" id="work" className="input w-full my-2 input-bordered" placeholder="Work" />
-                        <button disabled={disable || (total >= 10)} type="submit" className='btn  bg-myColor w-full my-2'>
-                            {(total >= 10) ? "Work Limit Reached" : "Add Work"}
+                        <button disabled={disable || (total >= 40)} type="submit" className='btn  bg-myColor w-full my-2'>
+                            {(total >= 40) ? "Work Limit Reached" : "Add Work"}
                         </button>
                         {
-                            (total >= 10) &&
+                            (total >= 40) &&
                             <h2 className="bg-error px-3 py-1 rounded text-black text-center font-bold">Max work limit reached</h2>
                         }
                     </form >

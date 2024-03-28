@@ -13,7 +13,7 @@ const HomeServicePrice = ({ categories }: { categories: Categories }) => {
     }, [selectedCategory])
 
     return (
-        <div className=" py-10 md:pt-20 text-myColor px-10  ">
+        <div className=" py-10 md:pt-20 text-myColor px-10  min-h-screen">
             <header className={`border-b-4 border-b-myColor mb-20 
             agatho`}>
                 <h2 className="text-3xl md:text-7xl">PRICES OF OUR SALOON</h2>

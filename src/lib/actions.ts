@@ -448,3 +448,13 @@ export async function deleteWork(formData: FormData) {
 
     }
 }
+
+export async function getPhoneOnly() {
+    try {
+        const data = await prisma.contactInfo.findFirst({ select: { phoneNumber: true } })
+        return data?.phoneNumber
+    } catch (error) {
+        console.log(error);
+
+    }
+}

@@ -5,7 +5,7 @@ import React from 'react'
 const HomeOfferCarouselItem = ({ id, image, next, prev }: { id: string, image: StaticImageData | string, prev: string, next: string, }) => {
     return (
         <div
-            id={`offer${id}`} className="carousel-item relative w-full cursor-pointer h-32 md:h-[80vh]">
+            id={`offer${id}`} className="carousel-item relative w-full cursor-pointer h-64 md:h-[80vh]">
             <Image src={image} alt={`offer-${next}`} fill className="object-cover" />
 
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

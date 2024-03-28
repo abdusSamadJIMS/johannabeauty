@@ -15,6 +15,8 @@ const Hero = ({ whatsApp }: { whatsApp: string }) => {
     return (
         <div className={`hero min-h-screen bg-[url('/static/heroImg.jpg')]
         ${isIOS ? "" : "bg-fixed"} bg-center bg-no-repeat bg-cover
+
+        
         relative`}>
             <div className="hero-overlay bg-opacity-60"></div>
 
