@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image'
 import GalleryCol from './GalleryCol'
 import { colType } from '@/lib/types';
 
