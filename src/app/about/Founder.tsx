@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import img from '../../../public/static/clientImage.jpg'
 import Link from 'next/link'
-const Founder = ({ imageUrl }: { imageUrl: string }) => {
+const Founder = ({ imageUrl, instaUrl }: { imageUrl: string, instaUrl: string }) => {
     const [more, setMore] = useState(false)
     const text = "As a single mother, I understand the importance of self-care and confidence in our daily lives. That's why I'm committed to providing each client with an exceptional experience that leaves them feeling pampered, rejuvenated, and radiant. Whether it's crafting the perfect haircut, mastering the latest trends in hair color, or providing luxurious spa treatments, our team is dedicated to bringing out the best in every client who walks through our doors.";
     const moreText1 = "I bring a unique blend of expertise and creativity to every service we offer. But more than just technical skills, my commitment to our clients goes beyond the salon chair. I believe in building lasting relationships and creating a sense of community within our salon walls."
@@ -43,7 +43,7 @@ const Founder = ({ imageUrl }: { imageUrl: string }) => {
                                 </p>
                             </>
                         }
-                        <Link href={""} title='insta' className='border border-myColor px-4 py-2 rounded-full agatho'>Instagram</Link>
+                        <Link href={instaUrl} target='_blank' title='Instagram' className='border border-myColor px-4 py-2 rounded-full agatho'>Instagram</Link>
                     </div>
                 </div>
             </div>

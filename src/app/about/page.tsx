@@ -5,7 +5,7 @@ import Timing from './Timing'
 import OutTeam from './OutTeam'
 import { Metadata } from 'next'
 import AboutHero from './AboutHero'
-import { fetchAboutFounderImage, fetchAboutHeroImage } from '@/lib/actions'
+import { fetchAboutFounderImage, fetchAboutHeroImage, fetchContactInfo } from '@/lib/actions'
 
 export const metadata: Metadata = {
     title: "About Us",
@@ -15,12 +15,14 @@ export const metadata: Metadata = {
 const AboutPage = async () => {
     const heroData = await fetchAboutHeroImage()
     const founderData = await fetchAboutFounderImage();
+    const info = await fetchContactInfo();
+
     return (
         <main>
             <AboutHero imageUrl={heroData.image} />
             <div className='px-8 md:px-20 my-20'>
                 <Concept />
-                <Founder imageUrl={founderData.image} />
+                <Founder instaUrl={info?.instagram || ""} imageUrl={founderData.image} />
                 <Timing />
                 <OutTeam />
             </div>

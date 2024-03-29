@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     template: "%s | JOHANNA BEAUTY",
     default: "JOHANNA BEAUTY | YOUR BEAUTY DESTINATION",
   },
-  description: "With over 22 years in beauty, we bring expertise and passion. Our salon offers transformative beauty experiences in a welcoming atmosphere.",
-  metadataBase: new URL('https://johannabeauty.vercel.app'),
+  description: "With over 22 years in beauty, we bring expertise and passion. Our salon offers transformative beauty experiences in a welcoming atmosphere at Johanna Beauty Salon",
+  metadataBase: new URL('https://johannabeautysalon.in'),
   alternates: {
     canonical: "/",
     languages: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     images: './opengraph-image.jpg',
     type: "website",
     title: "JOHANNA BEAUTY | YOUR BEAUTY DESTINATION",
-    url: "https://johannabeauty.vercel.app",
+    url: "https://johannabeautysalon.in",
   },
   keywords: ['beauty', 'fashion', 'beautiful', 'acne'],
 
