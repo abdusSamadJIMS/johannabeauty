@@ -509,9 +509,9 @@ export async function sendQuery(formData: FormData) {
     const query = formData.get("query") as string
     const email = formData.get("email") as string
 
-    if (!(name || phone || query || email)) {
-        return { message: "Please fill all the fields ! ", ok: false }
-    }
+    // if (!(name || phone || query || email)) {
+    //     return { message: "Please fill all the fields ! ", ok: false }
+    // }
     try {
         const mailOptions = {
             from: process.env.GMAIL_USER,
