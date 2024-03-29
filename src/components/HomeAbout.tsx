@@ -8,10 +8,11 @@ const HomeAbout = async () => {
     return (
         <div className="grid md:grid-cols-2 gap-y-9 justify-items-center  pt-10 md:pt-20">
             <div className={`md:col-span-1 hero 
-            bg-cover md:h-[90vh] h-[120vw]`}
+            bg-cover md:min-h-[90vh] max-md:hidden`}
                 style={{ backgroundImage: `url(${data.image})` }}
             >
                 <div className="hero-overlay bg-opacity-55"></div>
+                {/* <Image src={aboutImg} alt="aboutImage" className="w-full" /> */}
             </div>
             <div className="md:col-span-1 text-myColor p-5 ">
                 <header>
@@ -28,10 +29,13 @@ const HomeAbout = async () => {
                     </Link>
                 </div>
             </div>
-            <div className="md:col-span-1 hero bg-[url('/static/aboutHome.jpg')]
+            <div className="md:col-span-1 hero
+            
         bg-cover
         min-h-[40vh]
-        md:hidden">
+        md:hidden"
+                style={{ backgroundImage: `url(${data.image})` }}
+            >
                 <div className="hero-overlay bg-opacity-55"></div>
 
             </div>
