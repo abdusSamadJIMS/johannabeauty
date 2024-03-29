@@ -27,8 +27,8 @@ const Header = () => {
             label: "offers"
         },
         {
-            href: "/admin/work",
-            label: "work"
+            href: "/admin/gallery",
+            label: "gallery"
         },
         {
             href: "/api/auth/signout",

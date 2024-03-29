@@ -52,14 +52,7 @@ const ContactInfoPage = async () => {
 
                 }
             </div>
-            <div className="">
-                <header>
-                    <h2 className='agatho text-myColor text-7xl border-b-2 border-b-myColor'>Starter Images</h2>
-                </header>
-                <div className="forms">
 
-                </div>
-            </div>
         </>
     )
 }

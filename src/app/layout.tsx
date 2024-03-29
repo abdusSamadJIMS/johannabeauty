@@ -35,8 +35,7 @@ export const metadata: Metadata = {
     url: "https://johannabeautysalon.in",
   },
   keywords: ['beauty', 'fashion', 'beautiful', 'acne'],
-
-  // verification: { google: 'kX8ZIUq1cUGLuxBV3cf9lXOy5gKkT5ihjHXPZa-y2tE' }
+  verification: { google: 'bKHS0Re-QcRIZkH3UYplJ5AxSR9LwMDJB-9SleG8JAU' }
 };
 
 export default async function RootLayout({
