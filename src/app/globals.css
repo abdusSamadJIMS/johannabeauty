@@ -55,3 +55,22 @@ body {
 .imgDiv:focus .imgText {
     transform: translateY(-4rem);
 }
+
+
+@keyframes slides {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.photos:hover .photos-slide {
+    animation-play-state: paused;
+}
+
+.photos-slide {
+    animation: slides 15s linear infinite;
+}
