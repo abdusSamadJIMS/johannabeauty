@@ -4,6 +4,9 @@ import * as bcrypt from 'bcrypt'
 import prisma from './prisma'
 import { revalidatePath } from 'next/cache'
 import { backendClient } from './edgestore-server'
+import { Options } from 'nodemailer/lib/sendmail-transport'
+import { transporter } from './transporter'
+import optionGenerator from './userMailOption'
 
 
 
@@ -496,5 +499,85 @@ export async function getPhoneOnly() {
     } catch (error) {
         console.log(error);
 
+    }
+}
+
+
+export async function sendQuery(formData: FormData) {
+    const name = formData.get("name") as string
+    const phone = formData.get("phone") as string
+    const query = formData.get("query") as string
+    const email = formData.get("email") as string
+
+    if (!(name || phone || query || email)) {
+        return { message: "Please fill all the fields ! ", ok: false }
+    }
+    try {
+        const mailOptions = {
+            from: process.env.GMAIL_USER,
+            to: ["samadmalik04@gmail.com"],
+            subject: "New Query !",
+            text: "",
+            html: `<div style="text-align: center;">
+            <strong>From:&nbsp;</strong>${name}
+            <br>
+          </div>
+          <div style="text-align: center;">
+            <strong>Phone Number:&nbsp;</strong>${phone}
+            <br>
+            <strong>Email Address:&nbsp;</strong>${email}
+            <br>
+            <br>
+            <a href="tell:${phone}" target="_blank" class="cloudHQ__gmail_elements_final_btn" style="background-color: #9d5836; color: #ffffff; border: 0px solid #000000; border-radius: 3px; box-sizing: border-box; font-size: 13px; font-weight: bold; line-height: 40px; padding: 12px 24px; text-align: center; text-decoration: none; text-transform: uppercase; vertical-align: middle;" rel="noopener">Call ${name}</a> 
+            <br>
+            <br>
+          </div>
+          <div style="text-align: center;">
+            <span style="font-size: 14pt;">
+              <strong>Query:&nbsp;</strong>${query} 
+              <br>
+              <br>
+              <br>
+            </span>
+          </div>
+          `
+
+        }
+        let success = true;
+        await new Promise((res, rej) => {
+            transporter.sendMail(mailOptions, (err, info) => {
+                if (err) {
+                    console.log(err);
+                    rej(err)
+                    success = false
+                } else {
+                    res(info)
+                }
+            })
+        })
+
+        const mailOptions2 = optionGenerator({ userMail: email, userName: name })
+
+        await new Promise((res, rej) => {
+            transporter.sendMail(mailOptions2, (err, info) => {
+                if (err) {
+                    rej(err)
+                    console.log(err);
+                } else {
+                    res(info)
+                }
+            })
+        })
+        if (success) {
+            return { message: "Your query has been send successfully ", ok: true }
+        } else {
+            return { message: "Internal Server Error ! ", ok: false }
+        }
+
+
+
+
+    } catch (error) {
+        return { message: "Please fill all the fields ! ", ok: false }
     }
 }
