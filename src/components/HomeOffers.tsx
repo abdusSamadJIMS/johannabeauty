@@ -9,21 +9,7 @@ import { Offer } from '@prisma/client'
 
 const HomeOffers = ({ offers }: { offers: Offer[] }) => {
     const router = useRouter()
-    // const offers = [
-    //     {
-    //         id: '1',
-    //         image: b1,
-    //     },
-    //     {
-    //         id: '2',
-    //         image: b1,
-    //     },
-    //     {
-    //         id: '3',
-    //         image: b1,
-    //     },
 
-    // ]
     return (
         <div className="py-5 md:py-10 md:pt-20 text-myColor md:px-10">
             <header className={` border-b-4 border-b-myColor mb-10 md:mb-20 

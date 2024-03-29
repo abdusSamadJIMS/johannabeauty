@@ -41,7 +41,7 @@ const Header = () => {
     return (
         <nav className="flex  justify-between w-full items-center p-5 absolute z-10 top-0">
             <div className={'agatho'}>
-                <Link href={'/'} className="font-bold md:text-2xl tracking-wider bg-transparent">
+                <Link title='home' href={'/'} className="font-bold md:text-2xl tracking-wider bg-transparent">
                     <Image
                         priority
                         src={logo} alt='Johanna-Logo' className='w-14 md:w-20 bg-white/75 rounded-full bg-opacity-80'
@@ -52,10 +52,11 @@ const Header = () => {
                 {
                     navLinks.map((link) =>
                     (
-                        <Link key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize mb-10
+                        <Link
+                            title={link.label}
+                            key={link.href} href={link.href} className={`border   px-3 py-1 rounded-full ${pathname == link.href ? "border-myColor" : "border-transparent"} capitalize mb-10
                         ${pathname == "/gallery" ? "text-black" : ""}
                         `}>{link.label}</Link>
-
                     ))
                 }
 
@@ -78,7 +79,9 @@ const Header = () => {
                             <div className='flex flex-col gap-6 text-2xl text-white font-thin'>
                                 {
                                     navLinks.map((link) => (
-                                        <Link key={link.href} href={link.href} className={`capitalize ${(link.href == pathname) ? "underline font-medium" : "font-thin"}`}>{link.label}</Link>
+                                        <Link
+                                            title={link.label}
+                                            key={link.href} href={link.href} className={`capitalize ${(link.href == pathname) ? "underline font-medium" : "font-thin"}`}>{link.label}</Link>
 
                                     ))
                                 }
