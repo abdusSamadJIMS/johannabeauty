@@ -2,7 +2,7 @@
 
 const nextConfig = {
   async headers() {
-    [
+    return [
       {
         // matching all API routes
         // https://vercel.com/guides/how-to-enable-cors
