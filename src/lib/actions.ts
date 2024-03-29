@@ -427,6 +427,13 @@ export async function fetchAllWork() {
                     { name: "Hero-Image-About" },
                     { name: "About-Home" },
                     { name: "Hero-Image-Desktop" },
+                    { name: "SALON-IMAGE-NUMBER-1" },
+                    { name: "SALON-IMAGE-NUMBER-2" },
+                    { name: "SALON-IMAGE-NUMBER-3" },
+                    { name: "SALON-IMAGE-NUMBER-4" },
+                    { name: "SALON-IMAGE-NUMBER-5" },
+                    { name: "SALON-IMAGE-NUMBER-6" },
+                    { name: "SALON-IMAGE-NUMBER-7" },
                 ]
             }
         });
@@ -509,9 +516,9 @@ export async function sendQuery(formData: FormData) {
     const query = formData.get("query") as string
     const email = formData.get("email") as string
 
-    // if (!(name || phone || query || email)) {
-    //     return { message: "Please fill all the fields ! ", ok: false }
-    // }
+    if (!(name || phone || query || email)) {
+        return { message: "Please fill all the fields ! ", ok: false }
+    }
     try {
         const mailOptions = {
             from: process.env.GMAIL_USER,
@@ -580,4 +587,22 @@ export async function sendQuery(formData: FormData) {
     } catch (error) {
         return { message: "Please fill all the fields ! ", ok: false }
     }
+}
+
+
+export async function fetchAllSalonImages() {
+    const data = await prisma.work.findMany({
+        where: {
+            OR: [
+                { name: "SALON-IMAGE-NUMBER-1" },
+                { name: "SALON-IMAGE-NUMBER-2" },
+                { name: "SALON-IMAGE-NUMBER-3" },
+                { name: "SALON-IMAGE-NUMBER-4" },
+                { name: "SALON-IMAGE-NUMBER-5" },
+                { name: "SALON-IMAGE-NUMBER-6" },
+                { name: "SALON-IMAGE-NUMBER-7" },
+            ]
+        }
+    })
+    return data
 }

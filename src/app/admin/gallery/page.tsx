@@ -9,7 +9,7 @@ const workPage = async () => {
         <div>
             <div>
                 <div className='agatho text-myColor text-7xl border-b-2 border-b-myColor flex justify-between items-center'>
-                    <h2>Work</h2>
+                    <h2>Gallery</h2>
                     <AddWorkForm total={works?.length || 0} />
                 </div>
                 <div className="overflow-x-auto">

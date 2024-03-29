@@ -10,7 +10,9 @@ const FooterLinks = () => {
         <div className="linkss flex gap-5 max-md:text-sm">
             {
                 links.map((link) => (
-                    <Link key={link.href} href={link.href} className={`${(pathname == link.href) ? "underline underline-offset-4" : ""}   capitalize`}>{link.label}</Link>
+                    <Link key={link.href}
+                        title={link.label}
+                        href={link.href} className={`${(pathname == link.href) ? "underline underline-offset-4" : ""}   capitalize`}>{link.label}</Link>
 
                 ))
             }

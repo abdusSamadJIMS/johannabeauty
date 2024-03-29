@@ -1,8 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
+import img from '../icon3.png'
+import { fetchAllSalonImages } from '@/lib/actions'
 
-const OutTeam = () => {
-    const repeat: number[] = []
+const OutTeam = async () => {
+    const data = await fetchAllSalonImages();
     return (
         <div
             id='our-salon'
@@ -11,10 +13,10 @@ const OutTeam = () => {
             <div className='custom-carousel-container flex overflow-auto gap-3 max-w-full scroll-smooth snap-mandatory'
             >
                 {
-                    repeat?.map((item, i) => (
+                    data?.map((item, i) => (
                         <div key={i} className='custom-carousel-item overflow-scroll flex-shrink-0 w-[50vw] md:w-[15vw] pb-5'>
                             <div className='h-56 md:h-[20rem] relative mb-2 w-full'>
-                                <Image src={''} alt='img' fill className='object-cover' />
+                                <Image src={item.image} alt={item.name} fill className='object-cover' />
                             </div>
                             {/* <div className='text-center'>
                                 <h5 className='font-semibold'>Abdus Samad</h5>
