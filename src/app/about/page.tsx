@@ -4,34 +4,23 @@ import Founder from './Founder'
 import Timing from './Timing'
 import OutTeam from './OutTeam'
 import { Metadata } from 'next'
+import AboutHero from './AboutHero'
+import { fetchAboutFounderImage, fetchAboutHeroImage } from '@/lib/actions'
 
 export const metadata: Metadata = {
     title: "About Us",
     description: "Unveil our story: where passion meets expertise in beauty. With 22+ years' experience, indulge in services celebrating confidence and beauty. Join us!"
 }
 
-const AboutPage = () => {
+const AboutPage = async () => {
+    const heroData = await fetchAboutHeroImage()
+    const founderData = await fetchAboutFounderImage();
     return (
         <main>
-            <div className="hero min-h-screen bg-[url('/static/aboutHeroImg.jpg')]
-        bg-fixed 
-        bg-center
-        bg-cover
-         bg-no-repeat
-        relative">
-                <div className="hero-overlay bg-opacity-60"></div>
-                <div className="hero-content w-full flex-col mt-24">
-                    <h2 className={`mb-3 text-6xl md:text-9xl  text-white tracking-wide 
-                    agatho 
-                    text-center
-                    `}>About Johanna Beauty</h2>
-                    <p className='max-w-lg text-white agatho text-center max-md:text-sm  opacity-80 text-lg'>Welcome to Johanna Beauty Salon, where beauty meets passion and expertise.
-                    </p>
-                </div>
-            </div>
+            <AboutHero imageUrl={heroData.image} />
             <div className='px-8 md:px-20 my-20'>
                 <Concept />
-                <Founder />
+                <Founder imageUrl={founderData.image} />
                 <Timing />
                 <OutTeam />
             </div>

@@ -42,7 +42,9 @@ const Header = () => {
         <nav className="flex  justify-between w-full items-center p-5 absolute z-10 top-0">
             <div className={'agatho'}>
                 <Link href={'/'} className="font-bold md:text-2xl tracking-wider bg-transparent">
-                    <Image src={logo} alt='Johanna-Logo' className='w-14 md:w-20 bg-white rounded-full bg-opacity-80'
+                    <Image
+                        priority
+                        src={logo} alt='Johanna-Logo' className='w-14 md:w-20 bg-white/75 rounded-full bg-opacity-80'
                     />
                 </Link>
             </div>

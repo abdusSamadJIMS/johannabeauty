@@ -1,16 +1,16 @@
-// import { agatho } from '@/app/layout'
+import { fetchHomeAboutImage } from '@/lib/actions'
 import Link from 'next/link'
 import React from 'react'
 import { HiArrowLongRight } from 'react-icons/hi2'
 
-const HomeAbout = () => {
+const HomeAbout = async () => {
+    const data = await fetchHomeAboutImage();
     return (
         <div className="grid md:grid-cols-2 gap-y-9 justify-items-center  pt-10 md:pt-20">
-            <div className="md:col-span-1 hero bg-[url('/static/aboutHome.jpg')]
-        bg-cover
-        md:min-h-[90vh]
-        max-md:hidden
-        ">
+            <div className={`md:col-span-1 hero 
+            bg-cover md:min-h-[90vh] max-md:hidden`}
+                style={{ backgroundImage: `url(${data.image})` }}
+            >
                 <div className="hero-overlay bg-opacity-55"></div>
                 {/* <Image src={aboutImg} alt="aboutImage" className="w-full" /> */}
             </div>

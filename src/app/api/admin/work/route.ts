@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
         if (!offer) {
             return NextResponse.json({ message: "Something went wrong! ", ok: false }, { status: 500 })
         }
-        return NextResponse.json({ message: "Offer Added ", ok: true }, { status: 200 })
+        return NextResponse.json({ message: "Gallery Image Added ", ok: true }, { status: 200 })
     } catch (error) {
         return NextResponse.json({ message: "Something went wrong! ", ok: false }, { status: 500 })
 

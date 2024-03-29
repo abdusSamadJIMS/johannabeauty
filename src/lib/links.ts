@@ -11,6 +11,10 @@ export const links = [
         label: "about us",
         href: "/about"
     },
+    {
+        label: "contact us",
+        href: "/#contact-us"
+    },
     // {
     //     label: "gallery",
     //     href: "/gallery"

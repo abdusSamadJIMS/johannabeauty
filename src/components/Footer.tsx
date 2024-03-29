@@ -3,7 +3,7 @@ import React from 'react'
 import FooterLinks from './FooterLinks'
 import { FaComputer } from 'react-icons/fa6'
 import Image from 'next/image'
-import logo from '../../public/static/logo/logo.png'
+import logo from '../../public/static/logo/logoJohanna.png'
 
 const Footer = ({ phoneNumber }: { phoneNumber: string | null | undefined }) => {
     return (
@@ -31,7 +31,7 @@ const Footer = ({ phoneNumber }: { phoneNumber: string | null | undefined }) => 
                 flex items-center gap-3
                 ">
                     <FaComputer />
-                    Website created by Business Terminal
+                    Website created by Abdus Samad
                 </Link>
             </div>
         </div>

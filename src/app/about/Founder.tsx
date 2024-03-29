@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import img from '../../../public/static/clientImage.jpg'
 import Link from 'next/link'
-const Founder = () => {
+const Founder = ({ imageUrl }: { imageUrl: string }) => {
     const [more, setMore] = useState(false)
     const text = "As a single mother, I understand the importance of self-care and confidence in our daily lives. That's why I'm committed to providing each client with an exceptional experience that leaves them feeling pampered, rejuvenated, and radiant. Whether it's crafting the perfect haircut, mastering the latest trends in hair color, or providing luxurious spa treatments, our team is dedicated to bringing out the best in every client who walks through our doors.";
     const moreText1 = "I bring a unique blend of expertise and creativity to every service we offer. But more than just technical skills, my commitment to our clients goes beyond the salon chair. I believe in building lasting relationships and creating a sense of community within our salon walls."
@@ -15,7 +15,7 @@ const Founder = () => {
                 id='founder'
                 className='py-16 grid md:grid-cols-2 gap-5 text-myColor'>
                 <div className=" relative w-full h-[100vw] md:h-[40vw] md:w-[40vw] my-auto">
-                    <Image src={img} alt='img' fill className='object-cover' />
+                    <Image src={imageUrl} alt='img' fill className='object-cover' />
                 </div>
                 <div className='flex  flex-col  items-center '>
                     <h2 className='uppercase agatho text-4xl md:text-8xl self-start justify-self-start mb-5'>The Founder</h2>

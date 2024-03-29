@@ -414,9 +414,20 @@ export async function deleteOffer(formData: FormData) {
 }
 
 export async function fetchAllWork() {
-
     try {
-        const works = await prisma.work.findMany();
+        const works = await prisma.work.findMany({
+            where: {
+                NOT: [
+                    { name: "Timing-2-About" },
+                    { name: "Timing-1-About" },
+                    { name: "Founder-About" },
+                    { name: "Hero-Image-About" },
+                    { name: "About-Home" },
+                    { name: "Hero-Image-Desktop" },
+                ]
+            }
+        });
+        fetchAboutTimingImages()
         revalidatePath("/");
         return works;
     } catch (error) {
@@ -424,6 +435,35 @@ export async function fetchAllWork() {
     }
 }
 
+
+export async function fetchHeroImage() {
+    const data = await prisma.work.findMany({ where: { name: "Hero-Image-Desktop" } })
+    return data[0];
+}
+export async function fetchHomeAboutImage() {
+    const data = await prisma.work.findMany({ where: { name: "About-Home" } })
+    return data[0];
+}
+export async function fetchAboutHeroImage() {
+    const data = await prisma.work.findMany({ where: { name: "Hero-Image-About" } })
+    return data[0];
+}
+export async function fetchAboutFounderImage() {
+    const data = await prisma.work.findMany({ where: { name: "Founder-About" } })
+    return data[0];
+}
+export async function fetchAboutTimingImages() {
+    const data = await prisma.work.findMany({
+        where: {
+            OR: [
+                { name: "Timing-2-About" },
+                { name: "Timing-1-About" },
+            ]
+        }
+    })
+    return data
+
+}
 export async function deleteWork(formData: FormData) {
     const id = formData.get("id") as string
     const fileUrl = formData.get("image") as string

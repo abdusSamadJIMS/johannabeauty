@@ -1,15 +1,24 @@
+import { fetchAboutTimingImages } from '@/lib/actions'
 import React from 'react'
 
-const Timing = () => {
+const Timing = async () => {
+    const timingImagesData = await fetchAboutTimingImages();
+
     return (
         <div
             id='salon-timing'
             className='grid grid-cols-2 md:grid-cols-4 gap-5 text-myColor py-10'
         >
-            <div className="col-span-1 max-md:col-span-full md:h-[45vw] relative h-[45vh]  hero bg-[url('/static/aboutTiming1.jpg')]">
+            <div className="col-span-1 max-md:col-span-full md:h-[45vw] relative h-[45vh]  hero 
+            bg-[url('/static/aboutTiming1.jpg')]"
+                style={{ backgroundImage: `url(${timingImagesData[0].image})` }}
+            >
                 <div className="hero-overlay bg-opacity-45"></div>
             </div>
-            <div className="col-span-2  max-md:hidden h-[45vh] md:h-[45vw] relative hero bg-[url('/static/aboutTiming2.jpg')]">
+            <div className="col-span-2  max-md:hidden h-[45vh] md:h-[45vw] relative hero bg-[url('/static/aboutTiming2.jpg')]"
+                style={{ backgroundImage: `url(${timingImagesData[1].image})` }}
+
+            >
                 <div className="hero-overlay bg-opacity-45"></div>
             </div>
             <div className="max-md:col-span-full col-span-1 max-md:w-full ">
