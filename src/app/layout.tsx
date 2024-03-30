@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      'en-US': '/en-US',
+      'en-US': '/',
     },
   },
   openGraph: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: "https://johannabeautysalon.in",
   },
   keywords: ['beauty', 'fashion', 'beautiful', 'acne'],
-  verification: { google: 'bKHS0Re-QcRIZkH3UYplJ5AxSR9LwMDJB-9SleG8JAU' }
+  verification: { google: 'bKHS0Re-QcRIZkH3UYplJ5AxSR9LwMDJB-9SleG8JAU' },
 };
 
 export default async function RootLayout({

@@ -43,6 +43,7 @@ const Header = () => {
             <div className={'agatho'}>
                 <Link title='home' href={'/'} className="font-bold md:text-2xl tracking-wider bg-transparent">
                     <Image
+                        title='Johanna Beauty Salon'
                         priority
                         src={logo} alt='Johanna-Logo' className='w-14 md:w-20 bg-white/75 rounded-full bg-opacity-80'
                     />
