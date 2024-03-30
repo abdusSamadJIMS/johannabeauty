@@ -23,20 +23,20 @@ const HomeContact = ({ whatsApp, instagram, mailId, phoneNumber }: { whatsApp: s
                 <div className="  w-full max-md:flex-col md:col-span-5 col-span-10">
                     <QueryForm />
                     <div className='max-w-full text-wrap'>
-                        <Link href={`mailto:"${mailId}"`} title='Mail Id' target='_blank' className='flex my-5 items-center gap-3 text-white text-wrap md:text-lg max-w-full'>
+                        <Link rel='external' href={`mailto:"${mailId}"`} title='Mail Id' target='_blank' className='flex my-5 items-center gap-3 text-white text-wrap md:text-lg max-w-full'>
                             <BiEnvelope className='text-lg md:text-3xl' />
                             {mailId}
                         </Link>
-                        <Link href={`tel:${phoneNumber}`} title='Phone No.' target='_blank' className='flex font-bold mb-10 items-center gap-3 text-white md:text-lg
+                        <Link rel='external' href={`tel:${phoneNumber}`} title='Phone No.' target='_blank' className='flex font-bold mb-10 items-center gap-3 text-white md:text-lg
                         '>
                             <BiPhone className='text-lg md:text-3xl' />
                             {phoneNumber}
                         </Link>
                         <div className='flex items-center gap-3 text-white text-xl'>
-                            <Link href={instagram} target='_blank' title='Instagram' className='bg-transparent border-2 p-2 rounded-full'>
+                            <Link rel='external' href={instagram} target='_blank' title='Instagram' className='bg-transparent border-2 p-2 rounded-full'>
                                 <FaInstagram className=' text-2xl text-white' />
                             </Link>
-                            <Link href={`https://wa.me/${whatsApp}`} target='_blank' title='Whatsapp' className='bg-transparent border-2 p-2 rounded-full'>
+                            <Link rel='external' href={`https://wa.me/${whatsApp}`} target='_blank' title='Whatsapp' className='bg-transparent border-2 p-2 rounded-full'>
                                 <FaWhatsapp className=' text-2xl text-white' />
                             </Link>
                         </div>
@@ -45,7 +45,7 @@ const HomeContact = ({ whatsApp, instagram, mailId, phoneNumber }: { whatsApp: s
 
                 </div>
                 <div className="left col-span-10  md:col-span-5 h-full flex flex-col justify-center items-center ">
-                    <h1 className='text-lg  md:hidden agatho text-white'>10<span className='font-sans'>/</span>45, Block 10, Geeta Colony, New Delhi, Delhi, 110031</h1>
+                    <p className='text-lg  md:hidden agatho text-white'>10<span className='font-sans'>/</span>45, Block 10, Geeta Colony, New Delhi, Delhi, 110031</p>
 
                     <div className=" overflow-hidden  sm:w-full sm:h-full
                 w-full h-[100vw]
@@ -53,6 +53,7 @@ const HomeContact = ({ whatsApp, instagram, mailId, phoneNumber }: { whatsApp: s
                 bg-myColor/55 rounded-t-xl  mockup-window y ">
 
                         <iframe
+
                             title='google map'
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.0999705171816!2d77.26475037518024!3d28.65672518298222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd3fe4c3b247%3A0xa870a523fcbe08da!2sJohanna%20Beauty%20Salon!5e0!3m2!1sen!2sin!4v1711709372791!5m2!1sen!2sin" style={{ border: '0', height: "90%", width: "100%", opacity: .45 }}
                             allowFullScreen={false}
@@ -61,7 +62,7 @@ const HomeContact = ({ whatsApp, instagram, mailId, phoneNumber }: { whatsApp: s
 
                         ></iframe>
                     </div>
-                    <h1 className='text-2xl  max-md:hidden agatho text-white'>10<span className='font-sans'>/</span>45, Block 10, Geeta Colony, New Delhi, Delhi, 110031</h1>
+                    <p className='text-2xl  max-md:hidden agatho text-white'>10<span className='font-sans'>/</span>45, Block 10, Geeta Colony, New Delhi, Delhi, 110031</p>
                 </div>
             </div>
         </div>
