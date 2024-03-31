@@ -43,7 +43,7 @@ const Founder = ({ imageUrl, instaUrl }: { imageUrl: string, instaUrl: string })
                                 </p>
                             </>
                         }
-                        <Link href={instaUrl} target='_blank' title='Instagram' className='border border-myColor px-4 py-2 rounded-full agatho'>Instagram</Link>
+                        <Link rel='external' href={instaUrl} target='_blank' title='Instagram' className='border border-myColor px-4 py-2 rounded-full agatho'>Instagram</Link>
                     </div>
                 </div>
             </div>
