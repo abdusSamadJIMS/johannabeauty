@@ -15,10 +15,10 @@ const agatho = localFont({
 })
 export const metadata: Metadata = {
   title: {
-    template: "%s | JOHANNA BEAUTY",
-    default: "JOHANNA BEAUTY | YOUR BEAUTY DESTINATION",
+    template: "%s | Johanna Beauty Salon",
+    default: "Johanna Beauty Salon | YOUR BEAUTY DESTINATION",
   },
-  description: "With over 22 years in beauty, we bring expertise and passion. Our salon offers transformative beauty experiences in a welcoming atmosphere at Johanna Beauty Salon",
+  description: "With over 22 years in beauty, we bring expertise and passion. Our salon offers transformative beauty experiences in a welcoming atmosphere at Johanna Beauty Salon Salon",
   metadataBase: new URL('https://johannabeautysalon.in'),
   alternates: {
     canonical: "/",
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    siteName: "Johanna Beauty",
+    siteName: "Johanna Beauty Salon",
     description: "With over 22 years in beauty, we bring expertise and passion. Our salon offers transformative beauty experiences in a welcoming atmosphere.",
     images: './opengraph-image.jpg',
     type: "website",
-    title: "JOHANNA BEAUTY | YOUR BEAUTY DESTINATION",
+    title: "Johanna Beauty Salon | YOUR BEAUTY DESTINATION",
     url: "https://johannabeautysalon.in",
   },
   keywords: ['beauty', 'fashion', 'beautiful', 'acne'],
