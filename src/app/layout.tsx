@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Johanna Beauty Salon",
     default: "Johanna Beauty Salon | YOUR BEAUTY DESTINATION",
   },
-  description: "With over 22 years in beauty, we bring expertise and passion. Our salon offers transformative beauty experiences in a welcoming atmosphere at JBS",
+  description: "With over 22 years in beauty, we bring expertise and passion. Our Johanna Beauty Salon offers transformative beauty experiences in a welcoming atmosphere.",
   metadataBase: new URL('https://johannabeautysalon.in'),
   alternates: {
     canonical: "/",
