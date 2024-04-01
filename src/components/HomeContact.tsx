@@ -4,6 +4,7 @@ import { BiEnvelope, BiPhone, } from 'react-icons/bi'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { IoIosSend } from 'react-icons/io'
 import QueryForm from './QueryForm'
+import Map from './Map'
 
 const HomeContact = ({ whatsApp, instagram, mailId, phoneNumber }: { whatsApp: string, instagram: string, mailId: string, phoneNumber: string }) => {
 
@@ -52,15 +53,7 @@ const HomeContact = ({ whatsApp, instagram, mailId, phoneNumber }: { whatsApp: s
 
                 bg-myColor/55 rounded-t-xl  mockup-window y ">
 
-                        <iframe
-
-                            title='google map'
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.0999705171816!2d77.26475037518024!3d28.65672518298222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd3fe4c3b247%3A0xa870a523fcbe08da!2sJohanna%20Beauty%20Salon!5e0!3m2!1sen!2sin!4v1711709372791!5m2!1sen!2sin" style={{ border: '0', height: "90%", width: "100%", opacity: .45 }}
-                            allowFullScreen={false}
-                            loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-                            className=''
-
-                        ></iframe>
+                        <Map />
                     </div>
                     <p className='text-2xl  max-md:hidden agatho text-white'>10<span className='font-sans'>/</span>45, Block 10, Geeta Colony, New Delhi, Delhi, 110031</p>
                 </div>

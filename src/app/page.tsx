@@ -6,13 +6,15 @@ import HomeServicePrice from "@/components/HomeServicePrice";
 import HomeOffers from "@/components/HomeOffers";
 
 import HomeContact from "@/components/HomeContact";
-import { fetchAllCategories, fetchAllOffers, fetchContactInfo } from "@/lib/actions";
+import { fetchAllCategories, fetchAllCategoriesWithoutRevalidate, fetchAllOffersWithoutRevalidate, fetchContactInfoWithoutRevalidate } from "@/lib/actions";
 import ExtraContent from "@/components/ExtraContent";
 
 export default async function Home() {
-  const categories = await fetchAllCategories();
-  const contactInfo = await fetchContactInfo();
-  const offers = await fetchAllOffers();
+
+
+  const categories = await fetchAllCategoriesWithoutRevalidate();
+  const contactInfo = await fetchContactInfoWithoutRevalidate();
+  const offers = await fetchAllOffersWithoutRevalidate();
 
   return (
     <main className="scroll-smooth">

@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 import { getPhoneOnly } from "@/lib/actions";
-import { jsonLd } from "@/lib/json-ld";
+import { jsonLd, keywords } from "@/lib/meta-data";
 
 const inter = Inter({ subsets: ["latin"] });
 const agatho = localFont({
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Johanna Beauty Salon | YOUR BEAUTY DESTINATION",
     url: "https://johannabeautysalon.in",
   },
-  keywords: ['beauty', 'fashion', 'beautiful', 'acne'],
+  keywords: keywords,
   verification: { google: 'bKHS0Re-QcRIZkH3UYplJ5AxSR9LwMDJB-9SleG8JAU' },
 
 };

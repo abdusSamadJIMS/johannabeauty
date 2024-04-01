@@ -66,6 +66,14 @@ export async function fetchAllCategories() {
         // console.log(error);
     }
 }
+export async function fetchAllCategoriesWithoutRevalidate() {
+    try {
+        const categories = await prisma.category.findMany({ include: { Service: true } });
+        return categories
+    } catch (error) {
+        // console.log(error);
+    }
+}
 
 export async function fetchUniqueCategory(id: string) {
     try {
@@ -354,6 +362,14 @@ export async function fetchContactInfo() {
         console.log(error);
     }
 }
+export async function fetchContactInfoWithoutRevalidate() {
+    try {
+        const contactInfo = await prisma.contactInfo.findFirst({});
+        return contactInfo
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 export async function updateContactInfo(formData: FormData) {
     const id = formData.get("id") as string
@@ -388,6 +404,14 @@ export async function fetchAllOffers() {
     try {
         const offers = await prisma.offer.findMany();
         revalidatePath("/");
+        return offers;
+    } catch (error) {
+
+    }
+}
+export async function fetchAllOffersWithoutRevalidate() {
+    try {
+        const offers = await prisma.offer.findMany();
         return offers;
     } catch (error) {
 
@@ -439,6 +463,33 @@ export async function fetchAllWork() {
         });
         fetchAboutTimingImages()
         revalidatePath("/");
+        return works;
+    } catch (error) {
+
+    }
+}
+export async function fetchAllWorkWithoutRevalidate() {
+    try {
+        const works = await prisma.work.findMany({
+            where: {
+                NOT: [
+                    { name: "Timing-2-About" },
+                    { name: "Timing-1-About" },
+                    { name: "Founder-About" },
+                    { name: "Hero-Image-About" },
+                    { name: "About-Home" },
+                    { name: "Hero-Image-Desktop" },
+                    { name: "SALON-IMAGE-NUMBER-1" },
+                    { name: "SALON-IMAGE-NUMBER-2" },
+                    { name: "SALON-IMAGE-NUMBER-3" },
+                    { name: "SALON-IMAGE-NUMBER-4" },
+                    { name: "SALON-IMAGE-NUMBER-5" },
+                    { name: "SALON-IMAGE-NUMBER-6" },
+                    { name: "SALON-IMAGE-NUMBER-7" },
+                ]
+            }
+        });
+        fetchAboutTimingImages()
         return works;
     } catch (error) {
 

@@ -21,3 +21,16 @@ export const jsonLd = {
     openingHours: "Mo 10:30-20:00 We 10:30-20:00 Th 10:30-20:00 Fr 10:30-20:00 Sa 10:30-20:00 Su 10:30-20:00",
     telephone: "+919990049326"
 }
+
+export const keywords = [
+    "Beauty Salon",
+    "Hair Styling",
+    "Skincare",
+    "Nail Care",
+    "Spa Treatments",
+    "Exclusive Offers",
+    "Johanna Beauty Salon",
+    "Glamour",
+    "Pampering",
+    "Luxury Beauty"
+];

@@ -1,12 +1,12 @@
 import GalleryCol from './GalleryCol'
 import { colType } from '@/lib/types';
 
-import { fetchAllWork } from '@/lib/actions';
+import { fetchAllWorkWithoutRevalidate } from '@/lib/actions';
 
 
 const Gallery = async () => {
 
-    const works = await fetchAllWork();
+    const works = await fetchAllWorkWithoutRevalidate();
     let col1: colType[] = [];
     let col2: colType[] = [];
     let col3: colType[] = [];
