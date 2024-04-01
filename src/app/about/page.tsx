@@ -5,7 +5,7 @@ import Timing from './Timing'
 import OutTeam from './OutTeam'
 import { Metadata } from 'next'
 import AboutHero from './AboutHero'
-import { fetchAboutFounderImage, fetchAboutHeroImage, fetchContactInfo, fetchContactInfoWithoutRevalidate } from '@/lib/actions'
+import { fetchAboutFounderImage, fetchAboutHeroImage, fetchContactInfoWithoutRevalidate } from '@/lib/actions'
 
 export const metadata: Metadata = {
     title: "About Us",
