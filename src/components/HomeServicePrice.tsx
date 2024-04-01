@@ -75,7 +75,9 @@ const HomeServicePrice = ({ categories }: { categories: Categories }) => {
                         selectedCategory.map((service, index) =>
                         (
                             <div key={index} className="collapse collapse-arrow join-item border border-myColor">
-                                <input type="radio" name="my-accordion-4" defaultChecked />
+                                <label htmlFor="my-accordion-4">
+                                    <input type="radio" name="my-accordion-4" defaultChecked />
+                                </label>
                                 <div className={`collapse-title text-xl  uppercase 
                                 agatho`}>
                                     {service.name}

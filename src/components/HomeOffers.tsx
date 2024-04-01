@@ -1,14 +1,8 @@
-'use client'
 import React from 'react'
-import b1 from '../../public/banner1.jpg'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import HomeOfferCarouselItem from './HomeOfferCarouselItem'
 import { Offer } from '@prisma/client'
 
 const HomeOffers = ({ offers }: { offers: Offer[] }) => {
-    const router = useRouter()
 
     return (
         <div className="py-5 md:py-10 md:pt-20 text-myColor md:px-10">
@@ -33,6 +27,12 @@ const HomeOffers = ({ offers }: { offers: Offer[] }) => {
                     {/* <HomeOfferCarouselItem id='1' image={b1} next='1' prev='1' /> */}
 
                 </div>
+            </div>
+            <div className="bg-myColor">
+
+                <p className='max-w-xl mx-auto text-center sm:text-3xl agatho text-white py-2'>
+                    Discover Exclusive Beauty Deals at Johanna Beauty Salon: Maximize Your Glamour with Our Hidden Gems
+                </p>
             </div>
         </div>
     )

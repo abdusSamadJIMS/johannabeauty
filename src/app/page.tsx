@@ -7,6 +7,7 @@ import HomeOffers from "@/components/HomeOffers";
 
 import HomeContact from "@/components/HomeContact";
 import { fetchAllCategories, fetchAllOffers, fetchContactInfo } from "@/lib/actions";
+import ExtraContent from "@/components/ExtraContent";
 
 export default async function Home() {
   const categories = await fetchAllCategories();
@@ -31,6 +32,7 @@ export default async function Home() {
         phoneNumber={contactInfo?.phoneNumber || ''}
         mailId={contactInfo?.mailId || ''}
       />
+      <ExtraContent />
     </main>
   );
 }

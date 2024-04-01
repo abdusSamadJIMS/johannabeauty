@@ -16,17 +16,6 @@ import HomeCategoryCarouselItem from './HomeCategoryCarouselItem'
 
 const HomeServices = ({ categories }: { categories: Categories | undefined }) => {
     const [serviceNo, setServiceNo] = useState(1)
-    // const [categories, setCategories] = useState<Categories>()
-
-    // async function fetch() {
-    //     await fetchAllCategories()
-    // }
-
-    // useEffect(() => {
-    //     fetchAllCategories()
-    //         .then(response => response)
-    //         .then(data => setCategories(data))
-    // }, [])
 
     return (
         <div className=" py-10 md:pt-20 text-myColor px-10  ">
@@ -36,8 +25,6 @@ const HomeServices = ({ categories }: { categories: Categories | undefined }) =>
             </header>
             {
                 categories && <>
-
-
                     <div className="carousel carousel-start rounded gap-[2.2%] md:gap-[1.5%] w-full">
                         {
                             categories?.map((category, index) => (

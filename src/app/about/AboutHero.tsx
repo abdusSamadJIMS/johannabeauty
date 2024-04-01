@@ -24,7 +24,7 @@ const AboutHero = ({ imageUrl }: { imageUrl: string }) => {
                 <h2 className={`mb-3 text-6xl md:text-9xl  text-white tracking-wide 
                     agatho 
                     text-center
-                    `}>About Johanna Beauty</h2>
+                    `}>About Johanna Beauty Salon</h2>
                 <p className='max-w-lg text-white agatho text-center max-md:text-sm  opacity-80 text-lg'>Welcome to Johanna Beauty Salon, where beauty meets passion and expertise.
                 </p>
             </div>

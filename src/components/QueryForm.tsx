@@ -32,7 +32,7 @@ const QueryForm = () => {
                     }
 
                 }} className="items-start text-myColor  w-full">
-                <h5 className="mb-3 agatho text-4xl font-bold  text-white text-center">Ask your query</h5>
+                <h6 className="mb-3 agatho text-4xl font-bold  text-white text-center">Ask your query</h6>
                 <label className="input mb-3 md:w-full border-white hover:border-white  flex items-center gap-2 bg-transparent rounded-full">
                     <input disabled={disable} required minLength={5} maxLength={30} type="text" name='name' className="grow text-white w-full  max-md:w-full bg-transparent  " placeholder="Name" />
                 </label>

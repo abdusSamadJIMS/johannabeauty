@@ -12,7 +12,7 @@ const HomeCategoryCarouselItem = ({ id, image, title, description }: {
             </div>
             <div className='text-myColor '>
                 <h6 className='font-bold text-xl tracking-wide my-1'>{title}</h6>
-                <p className='text-sm opacity-55' >{description}</p>
+                <p className='text-sm text-myColor' >{description}</p>
             </div>
 
         </div>

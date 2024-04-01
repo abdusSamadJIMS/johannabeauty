@@ -20,11 +20,11 @@ const HomeAbout = async () => {
                 </header>
                 <div className={`text-center text-4xl md:text-7xl flex flex-col justify-center gap-6 h-full 
                 agatho`}>
-                    <Link href={'/about#concept'}>Concept</Link>
-                    <Link href={'/about#founder'}>The Founder</Link>
-                    <Link href={'/about#salon-timing'}>Salon Timing</Link>
-                    <Link href={'/about#our-salon'}>Our Salon</Link>
-                    <Link href={'/about'} className="flex justify-center items-center gap-2 text-lg border w-fit mx-auto px-3 py-1 rounded-full border-myColor">Learn more
+                    <Link title='Concept' href={'/about#concept'}>Concept</Link>
+                    <Link title='The founder' href={'/about#founder'}>The Founder</Link>
+                    <Link title='Salon Timing' href={'/about#salon-timing'}>Salon Timing</Link>
+                    <Link title='Our Saon' href={'/about#our-salon'}>Our Salon</Link>
+                    <Link title='About Page' href={'/about'} className="flex justify-center items-center gap-2 text-lg border w-fit mx-auto px-3 py-1 rounded-full border-myColor">Learn more
                         <HiArrowLongRight className='max-md:mt-1 font-bold' />
                     </Link>
                 </div>
