@@ -20,7 +20,7 @@ const Footer = ({ phoneNumber }: { phoneNumber: string | null | undefined }) => 
                     <p className="max-md:text-sm font-bold">Johanna Beauty All rights reserved</p>
                 </div>
                 <FooterLinks />
-                <Link rel='external' href={`tel:${phoneNumber}`} title='Phone No.' target='_blank'>
+                <Link rel='external' href={`tel:${phoneNumber}`} className='font-extrabold' title='Phone No.' target='_blank'>
                     <p>+{phoneNumber}</p>
                 </Link>
             </div>

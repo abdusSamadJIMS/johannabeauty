@@ -1,6 +1,4 @@
 'use client'
-// import { agatho } from '@/app/layout'
-import { services } from '@/lib/services'
 import { Categories } from '@/lib/types'
 import React, { useEffect, useState } from 'react'
 
@@ -9,8 +7,9 @@ const HomeServicePrice = ({ categories }: { categories: Categories }) => {
     // const [selectedService, setSelectedService] = useState(services[0].subServices)
     const [activeCategory, setActiveCategory] = useState(categories[0].title)
     // const [activeService, setActiveService] = useState(services[0].title)
-    useEffect(() => {
-    }, [selectedCategory])
+    // useEffect(() => {
+
+    // }, [selectedCategory, activeCategory])
 
     return (
         <div className=" py-10 md:pt-20 text-myColor px-10  min-h-screen">
@@ -30,8 +29,6 @@ const HomeServicePrice = ({ categories }: { categories: Categories }) => {
                                     onClick={() => {
                                         setSelectedCategory(category.Service)
                                         setActiveCategory(category.title)
-                                        // setSelectedService(service.subServices)
-                                        // setActiveService(service.title)
                                     }}
                                     className={`cursor-pointer max-sm:text-sm ${activeCategory == category.title ? "" : "opacity-40"}`}
                                 >{category.title}</p>
@@ -46,28 +43,7 @@ const HomeServicePrice = ({ categories }: { categories: Categories }) => {
 
                 </div>
             }
-            {/* <div className="flex items-center text-center gap-5 overflow-auto mb-16">
-                {
-                    services.map((service, index) =>
-                    (
-                        <div key={index} className="flex gap-10 w-full">
-                            <p
-                                onClick={() => {
-                                    setSelectedService(service.subServices)
-                                    setActiveService(service.title)
-                                }}
-                                className={`cursor-pointer max-sm:text-sm ${activeService == service.title ? "" : "opacity-40"}`}
-                            >{service.title}</p>
-                            {
-                                ((index + 1) != services.length) &&
-                                <i className='border-r rotate-12 border-r-myColor'></i>
-                            }
-                        </div>
-                    )
-                    )
-                }
 
-            </div> */}
             <div className="subServices my-5">
 
                 <div className="join border-myColor join-vertical w-full">
@@ -75,9 +51,8 @@ const HomeServicePrice = ({ categories }: { categories: Categories }) => {
                         selectedCategory.map((service, index) =>
                         (
                             <div key={index} className="collapse collapse-arrow join-item border border-myColor">
-                                <label htmlFor="my-accordion-4">
-                                    <input type="radio" name="my-accordion-4" defaultChecked />
-                                </label>
+                                <label htmlFor="my-accordion-4"></label>
+                                <input type="radio" name="my-accordion-4" defaultChecked />
                                 <div className={`collapse-title text-xl  uppercase 
                                 agatho`}>
                                     {service.name}
