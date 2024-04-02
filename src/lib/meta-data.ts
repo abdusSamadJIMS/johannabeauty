@@ -23,14 +23,16 @@ export const jsonLd = {
 }
 
 export const keywords = [
+    "Johanna Beauty Salon",
+    "Johanna Beauty Salon in New Delhi",
     "Beauty Salon",
     "Hair Styling",
+    "Johanna Beauty Salon in Geeta Colony",
     "Skincare",
     "Nail Care",
     "Spa Treatments",
     "Exclusive Offers",
-    "Johanna Beauty Salon",
     "Glamour",
     "Pampering",
-    "Luxury Beauty"
+    "Luxury Beauty",
 ];
