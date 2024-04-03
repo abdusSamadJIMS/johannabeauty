@@ -16,7 +16,7 @@ const HomeAbout = async () => {
             </div>
             <div className="md:col-span-1 text-myColor p-5 ">
                 <header>
-                    <h3 className="text-myColor text-center text-sm md:text-lg max-md:mb-4">About Johanna Beauty</h3>
+                    <h3 className="text-myColor text-center text-sm md:text-lg max-md:mb-4">About Johanna Beauty Salon</h3>
                 </header>
                 <div className={`text-center text-4xl md:text-7xl flex flex-col justify-center gap-6 h-full 
                 agatho`}>
