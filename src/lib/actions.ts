@@ -586,7 +586,7 @@ export async function sendQuery(formData: FormData) {
             <strong>Email Address:&nbsp;</strong>${email}
             <br>
             <br>
-            <a href="tell:${phone}" target="_blank" class="cloudHQ__gmail_elements_final_btn" style="background-color: #9d5836; color: #ffffff; border: 0px solid #000000; border-radius: 3px; box-sizing: border-box; font-size: 13px; font-weight: bold; line-height: 40px; padding: 12px 24px; text-align: center; text-decoration: none; text-transform: uppercase; vertical-align: middle;" rel="noopener">Call ${name}</a> 
+            <a href="tell:${phone}" target="_blank" class="cloudHQ__gmail_elements_final_btn" style="background-color: #9d5836; color: #ffffff; border: 0px solid #000000; border-radius: 3px; box-sizing: border-box; font-size: 13px; font-weight: bold; line-height: 40px; padding: 12px 24px; text-align: center; text-decoration: none; text-transform: uppercase; vertical-align: middle;" rel="noopener">${name}</a> 
             <br>
             <br>
           </div>
