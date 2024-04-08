@@ -573,9 +573,8 @@ export async function sendQuery(formData: FormData) {
     try {
         const mailOptions = {
             from: process.env.GMAIL_USER,
-            to: ["samadmalik04@gmail.com"],
+            to: process.env.GMAIL_USER,
             subject: "New Query !",
-            text: "",
             html: `<div style="text-align: center;">
             <strong>From:&nbsp;</strong>${name}
             <br>
@@ -599,7 +598,6 @@ export async function sendQuery(formData: FormData) {
             </span>
           </div>
           `
-
         }
         let success = true;
         await new Promise((res, rej) => {
