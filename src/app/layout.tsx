@@ -46,20 +46,21 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const phoneNumber = await getPhoneOnly();
+  // const phoneNumber = await getPhoneOnly();
   return (
-    <html lang="en">
-      <body className={`${inter.className} ${agatho.variable}`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <Providers>
-          <Header />
-          {children}
-          <Footer phoneNumber={phoneNumber} />
-        </Providers>
-      </body>
-    </html>
+    <></>
+    // <html lang="en">
+    //   <body className={`${inter.className} ${agatho.variable}`}>
+    //     <script
+    //       type="application/ld+json"
+    //       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    //     />
+    //     <Providers>
+    //       <Header />
+    //       {children}
+    //       <Footer phoneNumber={phoneNumber} />
+    //     </Providers>
+    //   </body>
+    // </html>
   );
 }
